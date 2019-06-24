@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d73abbb-a3db-4401-a7ec-e33722297864" name="Default Changelist" comment="change project structure">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sviatlana_charnavokaya.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sviatlana_charnavokaya.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_cost/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Spec.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/out/production/sviatlana_charnavokaya/price_per_km.properties" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/out/production/sviatlana_charnavokaya/price_per_km.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="127">
+              <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,8 +69,8 @@
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main333.java" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1.java" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" />
-        <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" />
         <option value="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" />
+        <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" />
       </list>
     </option>
   </component>
@@ -241,12 +237,12 @@
       <workItem from="1560189456379" duration="1457000" />
       <workItem from="1560352100185" duration="2632000" />
       <workItem from="1560783979358" duration="9923000" />
-      <workItem from="1561365150117" duration="7541000" />
+      <workItem from="1561365150117" duration="10824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21553000" />
+    <option name="totallyTimeSpent" value="24836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -261,7 +257,7 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980047" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -270,7 +266,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -287,10 +283,10 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.32960895" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.24980047" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.24980047" />
+      <window_info anchor="right" id="Maven" order="8" weight="0.32960895" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,15 +367,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="51">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="127">
+          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

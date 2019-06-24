@@ -19,8 +19,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the weigth in kilograms or 'q' for quit");
         String inputString = scanner.nextLine();
-        if (!inputString.toLowerCase().equals("q"))   {
-            weight = new BigDecimal(inputString);
+
+        if (!inputString.toLowerCase().equals("q")) {
+            try {
+                weight = new BigDecimal(inputString);
+            } catch (NumberFormatException ex) {
+                System.out.println("Wrong value BigDecimal");
+            }
         } else {
             System.out.println("Bye!");
             return;
@@ -28,8 +33,13 @@ public class Main {
 
         System.out.println("Enter the distance in kilometers or 'q' for quit");
         inputString = scanner.nextLine();
-        if (!inputString.toLowerCase().equals("q"))   {
-            distance = new BigDecimal(inputString);
+        if (!inputString.toLowerCase().equals("q")) {
+            try {
+                distance = new BigDecimal(inputString);
+            } catch (NumberFormatException ex) {
+                System.out.println("Wrong value BigDecimal");
+            }
+
         } else {
             System.out.println("Bye!");
             return;
@@ -39,12 +49,13 @@ public class Main {
         Properties properties = new Properties();
 
         try {
-            fis = new FileInputStream("src/main/resources/price_per_km.properties");
+            fis = new FileInputStream("delivery_cost/resources/price_per_km.properties");
             properties.load(fis);
 
             String dist1 = properties.getProperty("less10");
             String dist2 = properties.getProperty("less100");
             String dist3 = properties.getProperty("less500");
+            String dist4 = properties.getProperty("less1000");
 
         } catch (IOException e) {
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
