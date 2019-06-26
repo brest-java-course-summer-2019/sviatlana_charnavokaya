@@ -7,10 +7,8 @@
     <list default="true" id="0d73abbb-a3db-4401-a7ec-e33722297864" name="Default Changelist" comment="change project structure">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_cost/out/production/sviatlana_charnavokaya/price_per_km.properties" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/out/production/sviatlana_charnavokaya/price_per_km.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/html_tamplate/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+            <state relative-caret-position="-799">
+              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,8 +78,8 @@
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Table.java" />
         <option value="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" />
         <option value="$PROJECT_DIR$/delivery_cost/resources/price_per_kg.properties" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -116,6 +114,12 @@
               <item name="sviatlana_charnavokaya" type="b2602c69:ProjectViewProjectNode" />
               <item name="sviatlana_charnavokaya" type="462c0819:PsiDirectoryNode" />
               <item name="delivery_cost" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sviatlana_charnavokaya" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sviatlana_charnavokaya" type="462c0819:PsiDirectoryNode" />
+              <item name="delivery_cost" type="462c0819:PsiDirectoryNode" />
+              <item name="html_tamplate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sviatlana_charnavokaya" type="b2602c69:ProjectViewProjectNode" />
@@ -159,6 +163,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/delivery_cost/html_tamplate" />
       <recent name="$PROJECT_DIR$/delivery_cost" />
     </key>
   </component>
@@ -257,12 +262,12 @@
       <workItem from="1560189456379" duration="1457000" />
       <workItem from="1560352100185" duration="2632000" />
       <workItem from="1560783979358" duration="9923000" />
-      <workItem from="1561365150117" duration="44814000" />
+      <workItem from="1561365150117" duration="46897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58826000" />
+    <option name="totallyTimeSpent" value="60909000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,7 +291,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -409,7 +414,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delivery_cost/css/style.css">
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
@@ -468,13 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/resources/price_per_kg.properties">
       <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
@@ -491,10 +489,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+        <state relative-caret-position="-799">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

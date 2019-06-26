@@ -41,7 +41,7 @@ public class Main {
             inputString = scanner.nextLine();
             if (inputString.toLowerCase().equals("q")) {
                 System.out.println("Bye!");
-                return null;
+                System.exit(0);
             }
             System.out.println("Incorrect data. " + massage);
 
@@ -100,4 +100,6 @@ public class Main {
         }else return new BigDecimal(properties.getProperty("more2000"));
 
     }
+
+
 }
