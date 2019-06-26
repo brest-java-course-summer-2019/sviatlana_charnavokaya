@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d73abbb-a3db-4401-a7ec-e33722297864" name="Default Changelist" comment="change project structure">
-      <change beforePath="$PROJECT_DIR$/delivery_cost/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_cost/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_cost/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_cost/out/production/sviatlana_charnavokaya/price_per_km.properties" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/out/production/sviatlana_charnavokaya/price_per_km.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="164">
+              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,6 +54,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -68,8 +69,18 @@
         <option value="$PROJECT_DIR$/delivery_cost/src/Main.java" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main333.java" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1.java" />
+        <option value="$PROJECT_DIR$/delivery_cost/html_tamplate/index2525.html" />
+        <option value="$PROJECT_DIR$/delivery_cost/html_tamplate/index.html" />
+        <option value="$PROJECT_DIR$/delivery_cost/html_tamplate/departments.html" />
+        <option value="$PROJECT_DIR$/delivery_cost/html_tamplate/employee.html" />
+        <option value="$PROJECT_DIR$/delivery_cost/html_tamplate/department.html" />
+        <option value="$PROJECT_DIR$/delivery_cost/css/style.css" />
+        <option value="$PROJECT_DIR$/delivery_cost/html_tamplate/employees.html" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java" />
+        <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Table.java" />
         <option value="$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties" />
+        <option value="$PROJECT_DIR$/delivery_cost/resources/price_per_kg.properties" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java" />
       </list>
     </option>
@@ -110,12 +121,6 @@
               <item name="sviatlana_charnavokaya" type="b2602c69:ProjectViewProjectNode" />
               <item name="sviatlana_charnavokaya" type="462c0819:PsiDirectoryNode" />
               <item name="delivery_cost" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sviatlana_charnavokaya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sviatlana_charnavokaya" type="462c0819:PsiDirectoryNode" />
-              <item name="delivery_cost" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -136,6 +141,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -202,6 +208,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main1111" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.brest2019.courses.Main1111" />
+      <module name="sviatlana_charnavokaya" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.brest2019.courses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main333" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.brest2019.courses.Main333" />
       <module name="sviatlana_charnavokaya" />
@@ -218,6 +237,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main1111" />
         <item itemvalue="Application.Main1" />
         <item itemvalue="Application.Main333" />
         <item itemvalue="Application.Main" />
@@ -237,12 +257,12 @@
       <workItem from="1560189456379" duration="1457000" />
       <workItem from="1560352100185" duration="2632000" />
       <workItem from="1560783979358" duration="9923000" />
-      <workItem from="1561365150117" duration="10824000" />
+      <workItem from="1561365150117" duration="44814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24836000" />
+    <option name="totallyTimeSpent" value="58826000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -267,7 +287,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990228" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -279,12 +299,12 @@
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32899022" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Database" order="1" weight="0.32960895" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32960895" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24980047" />
       <window_info anchor="right" id="Maven" order="8" weight="0.32960895" />
     </layout>
@@ -358,24 +378,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/index2525.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/departments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" selection-start-line="10" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/employees.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/department.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/html_tamplate/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/math/BigDecimal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="454" column="57" lean-forward="true" selection-start-line="454" selection-start-column="57" selection-end-line="454" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/Scanner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="916" column="5" lean-forward="true" selection-start-line="916" selection-start-column="5" selection-end-line="916" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#102#103#0" expanded="true" />
+            <element signature="e#123#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main1111.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="136">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delivery_cost/resources/price_per_kg.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/resources/price_per_km.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/delivery_cost/src/com/epam/brest2019/courses/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+        <state relative-caret-position="164">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
