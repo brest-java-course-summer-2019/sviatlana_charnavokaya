@@ -15,8 +15,8 @@ public class Main {
         BigDecimal pricePerKg;
         BigDecimal pricePerKm;
 
-        distance = readDataFromConsole("Enter the distance in kilometers or 'q' for quit");
-        weight = readDataFromConsole("Enter the weigth in kilograms or 'q' for quit");
+     /*   distance = readData("Enter the distance in kilometers or 'q' for quit");
+        weight = readData("Enter the weigth in kilograms or 'q' for quit");
         pricePerKg = readPricePerKmFromProperties(distance);
         pricePerKm = readPricePerKgFromProperties(weight);
 
@@ -31,7 +31,7 @@ public class Main {
 
     }
 
-    public static BigDecimal readDataFromConsole(String massage) {
+    public static BigDecimal readData(String massage) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(massage);
@@ -97,7 +97,7 @@ public class Main {
             return new BigDecimal(properties.getProperty("less1500"));
         }else if (weight.doubleValue() >=  1500 && weight.doubleValue() < 2000) {
             return new BigDecimal(properties.getProperty("less2000"));
-        }else return new BigDecimal(properties.getProperty("more2000"));
+        }else return new BigDecimal(properties.getProperty("more2000"));*/
 
     }
 
