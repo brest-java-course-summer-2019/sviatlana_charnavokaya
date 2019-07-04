@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!--   <link rel="stylesheet" href="css/bootstrap.min.css">
+       <link rel="stylesheet" href="css/style.css"> -->
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+
+    <title>Cars List</title>
+</head>
+<body>
+
+<header>
+    <nav class="pl-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="index.html" class="navbar-brand"><img src="img/logo.png" height="64" width="64" alt="Autobaza"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-item nav-link active" href="departments.html">Cars</a>
+                <a class="nav-item nav-link" href="employees.html">Drivers</a>
+                <a class="nav-item nav-link active" href="departments.html">Requests</a>
+                <a class="nav-item nav-link" href="employees.html">Trips</a>
+            </ul>
+        </div>
+    </nav>
+    <nav id="main-header"
+         class="py-1 navbar navbar-expand-sm navbar-light bg-light text-dark">
+        <span class="navbar-brand text-uppercase mr-auto">Cars</span>
+        <ul class="navbar-nav float-right">
+            <li class="nav-item">
+                <a href="department.html"
+                   class="btn btn-outline-secondary"
+                   title="Add car"
+                   data-toggle="tooltip"
+                   data-placement="bottom">Add</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section id="cars">
+
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table">
+
+                    <div class="row header">
+                        <div class="cell">
+                            Model
+                        </div>
+                        <div class="cell">
+                            Number
+                        </div>
+                        <div class="cell">
+                            Load Capacity
+                        </div>
+                        <div class="cell">
+                            Сharacteristics
+                        </div>
+                        <div class="cell">
+                            Driver
+                        </div>
+                        <div class="cell">
+                            Fixed
+                        </div>
+                        <div class="cell">
+
+                        </div>
+                        <div class="cell">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Model">
+                            Volkswagen
+                        </div>
+                        <div class="cell" data-title="Number">
+                            55-33 AA-1
+                        </div>
+                        <div class="cell" data-title="Load Capacity">
+                            10
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                            Реф
+                        </div>
+                        <div class="cell" data-title="Driver">
+                            Иванов И.И.
+                        </div>
+                        <div class="cell" data-title="Fixed">
+                            Да
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="department.html" class="btn btn-sm btn-outline-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit car"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-outline-danger"
+                                   title="Delete car"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Model">
+                            Iveco
+                        </div>
+                        <div class="cell" data-title="Number">
+                            18-19 АВ-1
+                        </div>
+                        <div class="cell" data-title="Load Capacity">
+                            15
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                            Негабарит
+                        </div>
+                        <div class="cell" data-title="Driver">
+                            Попов П.П.
+                        </div>
+                        <div class="cell" data-title="Fixed">
+                            Да
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="department.html" class="btn btn-sm btn-outline-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit car"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-outline-danger"
+                                   title="Delete car"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Model">
+                            Scania
+                        </div>
+                        <div class="cell" data-title="Number">
+                            АА-1 98-97
+                        </div>
+                        <div class="cell" data-title="Load Capacity">
+                            20
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                            Тент
+                        </div>
+                        <div class="cell" data-title="Driver">
+                            Кириллов К.К.
+                        </div>
+                        <div class="cell" data-title="Fixed">
+                            Нет
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="department.html" class="btn btn-sm btn-outline-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit car"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-outline-danger"
+                                   title="Delete car"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer>
+    <hr/>
+    <p class="text-center">&copy; 2019</p>
+</footer>
+
+<!-- Confirm delete Modal -->
+<div class="modal fade" id="deleteDialog" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header alert-danger">
+                <h5 class="modal-title" id="exampleModalLabel">Delete car</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please confirm delete
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+</html>
