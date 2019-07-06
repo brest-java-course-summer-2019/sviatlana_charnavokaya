@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--===============================================================================================-->
 
-    <title>Cars List</title>
+    <title>List Requests</title>
 </head>
 
 <body>
@@ -43,20 +43,20 @@
     </nav>
     <nav id="main-header"
          class="py-1 navbar navbar-expand-sm navbar-light bg-light text-dark">
-        <span class="navbar-brand text-uppercase mr-auto">Cars</span>
+        <span class="navbar-brand text-uppercase mr-auto">Requests</span>
         <ul class="navbar-nav float-right">
             <li class="nav-item">
-                <a href="car.html"
+                <a href="request.html"
                    class="btn btn-secondary"
-                   title="Add car"
+                   title="Add request"
                    data-toggle="tooltip"
-                   data-placement="bottom">Add car</a>
+                   data-placement="bottom">Add request</a>
             </li>
         </ul>
     </nav>
 </header>
 
-<section id="cars">
+<section id="requests">
 
     <div class="limiter">
         <div class="container-table100">
@@ -65,23 +65,21 @@
 
                     <div class="row header">
                         <div class="cell">
-                            Model
-                        </div>
-                        <div class="cell">
-                            Number
-                        </div>
-                        <div class="cell">
-                            Load Capacity
+                            Date
                         </div>
                         <div class="cell">
                             Сharacteristics
                         </div>
                         <div class="cell">
-                            Driver
+                            Distance
                         </div>
                         <div class="cell">
-                            Fixed
+                            Car Number
                         </div>
+                        <div class="cell">
+                            Request status
+                        </div>
+
                         <div class="cell">
 
                         </div>
@@ -91,71 +89,32 @@
                     </div>
 
                     <div class="row">
-                        <div class="cell" data-title="Model">
-                            Volkswagen
-                        </div>
-                        <div class="cell" data-title="Number">
-                            55-33 AA-1
-                        </div>
-                        <div class="cell" data-title="Load Capacity">
-                            10
-                        </div>
-                        <div class="cell" data-title="Сharacteristics">
-                            Реф
-                        </div>
-                        <div class="cell" data-title="Driver">
-                            Иванов И.И.
-                        </div>
-                        <div class="cell" data-title="Fixed">
-                            Да
-                        </div>
-                        <div class="cell" data-title="">
-                            <a href="car.html" class="btn btn-sm btn-primary"
-                               role="button" aria-pressed="true"
-                               title="Edit car"
-                               data-toggle="tooltip"
-                               data-placement="top"> Edit</a>
-                        </div>
-                        <div class="cell" data-title="">
-                         <span data-toggle="modal" data-target="#deleteDialog">
-                                <a href="#" class="btn btn-sm btn-danger"
-                                   title="Delete car"
-                                   data-toggle="tooltip"
-                                   data-placement="top">Delete</a>
-                         </span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="cell" data-title="Model">
-                            Iveco
-                        </div>
-                        <div class="cell" data-title="Number">
-                            18-19 АВ-1
-                        </div>
-                        <div class="cell" data-title="Load Capacity">
-                            15
+                        <div class="cell" data-title="Date">
+                            26/07/2019
                         </div>
                         <div class="cell" data-title="Сharacteristics">
                             Негабарит
                         </div>
-                        <div class="cell" data-title="Driver">
-                            Попов П.П.
+                        <div class="cell" data-title="Distance">
+                            350
                         </div>
-                        <div class="cell" data-title="Fixed">
-                            Да
+                        <div class="cell" data-title="Car Number">
+                            84-39 АА-7
+                        </div>
+                        <div class="cell" data-title="Request Status">
+                            Передана
                         </div>
                         <div class="cell" data-title="">
-                            <a href="car.html" class="btn btn-sm btn-primary"
+                            <a href="request.html" class="btn btn-sm btn-primary"
                                role="button" aria-pressed="true"
-                               title="Edit car"
+                               title="Edit request"
                                data-toggle="tooltip"
                                data-placement="top"> Edit</a>
                         </div>
                         <div class="cell" data-title="">
                          <span data-toggle="modal" data-target="#deleteDialog">
                                 <a href="#" class="btn btn-sm btn-danger"
-                                   title="Delete car"
+                                   title="Delete request"
                                    data-toggle="tooltip"
                                    data-placement="top">Delete</a>
                          </span>
@@ -163,35 +122,65 @@
                     </div>
 
                     <div class="row">
-                        <div class="cell" data-title="Model">
-                            Scania
-                        </div>
-                        <div class="cell" data-title="Number">
-                            АА-1 98-97
-                        </div>
-                        <div class="cell" data-title="Load Capacity">
-                            20
+                        <div class="cell" data-title="Date">
+                            26/07/2019
                         </div>
                         <div class="cell" data-title="Сharacteristics">
-                            Тент
+                           Реф
                         </div>
-                        <div class="cell" data-title="Driver">
-                            Кириллов К.К.
+                        <div class="cell" data-title="Distance">
+                            1200
                         </div>
-                        <div class="cell" data-title="Fixed">
-                            Нет
+                        <div class="cell" data-title="Car Number">
+
+                        </div>
+                        <div class="cell" data-title="Request Status">
+                            Принята
                         </div>
                         <div class="cell" data-title="">
-                            <a href="car.html" class="btn btn-sm btn-primary"
+                            <a href="request.html" class="btn btn-sm btn-primary"
                                role="button" aria-pressed="true"
-                               title="Edit car"
+                               title="Edit request"
                                data-toggle="tooltip"
                                data-placement="top"> Edit</a>
                         </div>
                         <div class="cell" data-title="">
                          <span data-toggle="modal" data-target="#deleteDialog">
                                 <a href="#" class="btn btn-sm btn-danger"
-                                   title="Delete car"
+                                   title="Delete request"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Date">
+                            28/07/2019
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                            Тент
+                        </div>
+                        <div class="cell" data-title="Distance">
+                            220
+                        </div>
+                        <div class="cell" data-title="Car Number">
+
+                        </div>
+                        <div class="cell" data-title="Request Status">
+                            Принята
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="request.html" class="btn btn-sm btn-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit request"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-danger"
+                                   title="Delete request"
                                    data-toggle="tooltip"
                                    data-placement="top">Delete</a>
                          </span>
@@ -205,9 +194,6 @@
     </div>
 </section>
 
-
-
-
 <footer>
     <hr/>
     <p class="text-center">&copy; 2019</p>
@@ -219,7 +205,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header alert-danger">
-                <h5 class="modal-title" id="exampleModalLabel">Delete car</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Delete request</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
