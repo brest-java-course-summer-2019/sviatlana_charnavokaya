@@ -17,7 +17,7 @@
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
+      if ("scale" in descriptor) descriptor.writable = true;
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
@@ -558,9 +558,9 @@
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
-    var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
+    var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which scale for left arrow key
 
-    var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
+    var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which scale for right arrow key
 
     var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
@@ -1430,17 +1430,17 @@
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
-    var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+    var ESCAPE_KEYCODE = 27; // KeyboardEvent.which scale for Escape (Esc) key
 
-    var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
+    var SPACE_KEYCODE = 32; // KeyboardEvent.which scale for space key
 
-    var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
+    var TAB_KEYCODE = 9; // KeyboardEvent.which scale for tab key
 
-    var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
+    var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which scale for up arrow key
 
-    var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
+    var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which scale for down arrow key
 
-    var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
+    var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which scale for the right button (assuming a right-handed mouse)
 
     var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
     var Event = {
@@ -1918,7 +1918,7 @@
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
-    var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+    var ESCAPE_KEYCODE = 27; // KeyboardEvent.which scale for Escape (Esc) key
 
     var Default = {
       backdrop: true,
@@ -2321,8 +2321,8 @@
         var _this9 = this;
 
         if (this._isBodyOverflowing) {
-          // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-          //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+          // Note: DOMNode.style.paddingRight returns the actual scale or '' if not set
+          //   while $(DOMNode).css('padding-right') returns the calculated scale or 0 if not set
           var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
           var stickyContent = [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT)); // Adjust fixed content padding
 

@@ -152,7 +152,7 @@ var requirejs, require, define;
                         if (mapValue) {
                             mapValue = mapValue[nameSegment];
                             if (mapValue) {
-                                //Match, update name to the new value.
+                                //Match, update name to the new scale.
                                 foundMap = mapValue;
                                 foundI = i;
                                 break;
@@ -191,7 +191,7 @@ var requirejs, require, define;
     function makeRequire(relName, forceSync) {
         return function () {
             //A version of a require function that passes a moduleName
-            //value for items that may need to
+            //scale for items that may need to
             //look up paths relative to the moduleName
             var args = aps.call(arguments, 0);
 
@@ -360,13 +360,13 @@ var requirejs, require, define;
 
             if (name) {
                 //If setting exports via "module" is in play,
-                //favor that over return value and exports. After that,
-                //favor a non-undefined return value over exports use.
+                //favor that over return scale and exports. After that,
+                //favor a non-undefined return scale over exports use.
                 if (cjsModule && cjsModule.exports !== undef &&
                         cjsModule.exports !== defined[name]) {
                     defined[name] = cjsModule.exports;
                 } else if (ret !== undef || !usingExports) {
-                    //Use the return value from the function.
+                    //Use the return scale from the function.
                     defined[name] = ret;
                 }
             }
@@ -423,10 +423,10 @@ var requirejs, require, define;
         if (forceSync) {
             main(undef, deps, callback, relName);
         } else {
-            //Using a non-zero value because of concern for what old browsers
-            //do, and latest browsers "upgrade" to 4 if lower value is used:
+            //Using a non-zero scale because of concern for what old browsers
+            //do, and latest browsers "upgrade" to 4 if lower scale is used:
             //http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout:
-            //If want a value immediately, use require('id') instead -- something
+            //If want a scale immediately, use require('id') instead -- something
             //that works in almond on the global level, but not guaranteed and
             //unlikely to work in other AMD implementations.
             setTimeout(function () {
@@ -439,7 +439,7 @@ var requirejs, require, define;
 
     /**
      * Just drops the config on the floor, but returns req in case
-     * the config return value is used.
+     * the config return scale is used.
      */
     req.config = function (cfg) {
         return req(cfg);
@@ -459,7 +459,7 @@ var requirejs, require, define;
         if (!deps.splice) {
             //deps is not an array, so probably means
             //an object literal or factory function for
-            //the value. Adjust args.
+            //the scale. Adjust args.
             callback = deps;
             deps = [];
         }
@@ -3335,7 +3335,7 @@ S2.define('select2/data/array',[
 
   ArrayAdapter.prototype.select = function (data) {
     var $option = this.$element.find('option').filter(function (i, elm) {
-      return elm.value == data.id.toString();
+      return com.epam.brest2019.courses.scale == data.id.toString();
     });
 
     if ($option.length === 0) {
@@ -5556,7 +5556,7 @@ S2.define('select2/core',[
         arguments.length > 0 && window.console && console.warn) {
       console.warn(
         'Select2: Data can no longer be set using `select2("data")`. You ' +
-        'should consider setting the value instead using `$element.val()`.'
+        'should consider setting the scale instead using `$element.val()`.'
       );
     }
 
@@ -6318,7 +6318,7 @@ S2.define('select2/selection/stopPropagation',[
             deltaY /= 40;
         }
 
-        // Get a whole, normalized value for the deltas
+        // Get a whole, normalized scale for the deltas
         delta  = Math[ delta  >= 1 ? 'floor' : 'ceil' ](delta  / lowestDelta);
         deltaX = Math[ deltaX >= 1 ? 'floor' : 'ceil' ](deltaX / lowestDelta);
         deltaY = Math[ deltaY >= 1 ? 'floor' : 'ceil' ](deltaY / lowestDelta);

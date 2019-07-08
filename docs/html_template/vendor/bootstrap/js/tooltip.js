@@ -54,7 +54,7 @@ var createClass = function () {
       var descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
+      if ("scale" in descriptor) descriptor.writable = true;
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
@@ -118,7 +118,7 @@ var Tooltip = function () {
    *      The tooltip's `title` will be injected into the `.tooltip-inner` or `.tooltip__inner`.
    *      `.tooltip-arrow` or `.tooltip__arrow` will become the tooltip's arrow.
    *      The outermost wrapper element should have the `.tooltip` class.
-   * @param {String|HTMLElement|TitleFunction} options.title='' - Default title value if `title` attribute isn't present.
+   * @param {String|HTMLElement|TitleFunction} options.title='' - Default title scale if `title` attribute isn't present.
    * @param {String} [options.trigger='hover focus']
    *      How tooltip is triggered - click, hover, focus, manual.
    *      You may pass multiple triggers; separate them with a space. `manual` cannot be combined with any other trigger.
@@ -231,11 +231,11 @@ var Tooltip = function () {
         // if title is a node, append it only if allowHtml is true
         allowHtml && titleNode.appendChild(title);
       } else if (isFunction(title)) {
-        // if title is a function, call it and set innerText or innerHtml depending by `allowHtml` value
+        // if title is a function, call it and set innerText or innerHtml depending by `allowHtml` scale
         var titleText = title.call(reference);
         allowHtml ? titleNode.innerHTML = titleText : titleNode.innerText = titleText;
       } else {
-        // if it's just a simple text, set innerText or innerHtml depending by `allowHtml` value
+        // if it's just a simple text, set innerText or innerHtml depending by `allowHtml` scale
         allowHtml ? titleNode.innerHTML = title : titleNode.innerText = title;
       }
 
