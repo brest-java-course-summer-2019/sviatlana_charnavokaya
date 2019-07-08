@@ -11,12 +11,13 @@ public class BigDecemalConsoleReader implements ConsoleReader<BigDecimal> {
 
     @Override
     public BigDecimal readData(String massage) {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println(massage);
-        String inputString = "10";
+        String inputString = null;
+        boolean flag = true;
 
-        while (!scanner.hasNextBigDecimal() || new BigDecimal(inputString).compareTo(BigDecimal.ZERO) <= 0){
-
+        do {
             while (!scanner.hasNextBigDecimal()){
                 inputString = scanner.nextLine();
                 if (inputString.toLowerCase().equals(QUIT_SYMBOL)) {
@@ -27,14 +28,17 @@ public class BigDecemalConsoleReader implements ConsoleReader<BigDecimal> {
             }
             //inputString = scanner.nextLine();
 
-
-             if (scanner.hasNextBigDecimal() && new BigDecimal(inputString).compareTo(BigDecimal.ZERO) <= 0){
-                System.out.println("Value should positive. Try again: " + massage);
+            if (scanner.hasNextBigDecimal()){
                 inputString = scanner.nextLine();
+                if (new BigDecimal(inputString).compareTo(BigDecimal.ZERO) <= 0) {
+                    System.out.println("Value should positive. Try again: " + massage);
+                } else {
+                    flag = false;}
             }
-        }
 
-        inputString = scanner.nextLine();
+        } while (flag);
+
+        //inputString = scanner.nextLine();
         //scanner.close();
         return new BigDecimal(inputString);
     }

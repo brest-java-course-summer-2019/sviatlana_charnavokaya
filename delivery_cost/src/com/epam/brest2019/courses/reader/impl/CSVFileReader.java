@@ -26,15 +26,4 @@ public class CSVFileReader implements FileReader <Integer, BigDecimal>{
         return resultMap;
     }
 
-    @Override
-    public BigDecimal readPricePerKmFromProperties(BigDecimal distance) {
-        return null;
-    }
-
-    @Override
-    public BigDecimal readPricePerKgFromProperties(BigDecimal weight) {
-        return null;
-    }
-
-
 }

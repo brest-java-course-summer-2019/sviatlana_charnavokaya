@@ -18,7 +18,7 @@ if (typeof jQuery === 'undefined') {
 (function () {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("scale" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
@@ -549,8 +549,8 @@ var Carousel = function ($) {
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 600;
-  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
-  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
+  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which scale for left arrow key
+  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which scale for right arrow key
   var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
   var Default = {
@@ -1426,12 +1426,12 @@ var Dropdown = function ($) {
   var EVENT_KEY = '.' + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
-  var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
-  var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
-  var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
-  var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
-  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
+  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which scale for Escape (Esc) key
+  var SPACE_KEYCODE = 32; // KeyboardEvent.which scale for space key
+  var TAB_KEYCODE = 9; // KeyboardEvent.which scale for tab key
+  var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which scale for up arrow key
+  var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which scale for down arrow key
+  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which scale for the right button (assuming a right-handed mouse)
   var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + '|' + ARROW_DOWN_KEYCODE + '|' + ESCAPE_KEYCODE);
 
   var Event = {
@@ -1845,7 +1845,7 @@ var Modal = function ($) {
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 300;
   var BACKDROP_TRANSITION_DURATION = 150;
-  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which scale for Escape (Esc) key
 
   var Default = {
     backdrop: true,
@@ -2243,8 +2243,8 @@ var Modal = function ($) {
       var _this18 = this;
 
       if (this._isBodyOverflowing) {
-        // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+        // Note: DOMNode.style.paddingRight returns the actual scale or '' if not set
+        //   while $(DOMNode).css('padding-right') returns the calculated scale or 0 if not set
 
         // Adjust fixed content padding
         $(Selector.FIXED_CONTENT).each(function (index, element) {
