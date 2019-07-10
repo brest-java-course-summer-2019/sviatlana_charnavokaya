@@ -7,14 +7,14 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class CarTest
-{
+public class CarTest {
+
     Car car = new Car();
 
-  /*  @Test
+    @Test
     public void getCarId() {
         car.setCarId(15);
-        Assert.assertTrue(getCarId().equals(15));
+        Assert.assertTrue(car.getCarId().equals(15));
     }
 
     @Test
@@ -28,5 +28,5 @@ public class CarTest
         car.setFixed(true);
         Assert.assertTrue(car.getFixed().equals(true));
     }
-*/
+
 }
