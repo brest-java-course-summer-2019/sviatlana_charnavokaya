@@ -13,6 +13,7 @@
 
   <modules>
     <module>model</module>
+    <module>dao</module>
   </modules>
 
   <distributionManagement>
@@ -38,10 +39,13 @@
     <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
     <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
     <maven-site-plugin.vesrion>3.7.1</maven-site-plugin.vesrion>
+    <maven-pmd-plugin.vesrion>3.12.0</maven-pmd-plugin.vesrion>
+    <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+    <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 
     <checkstyle.version>8.22</checkstyle.version>
     <jacoco.version>0.8.2</jacoco.version>
-    <jacoco.bundle.coveredratio.minimum>0%</jacoco.bundle.coveredratio.minimum>
+    <jacoco.bundle.coveredratio.minimum>10%</jacoco.bundle.coveredratio.minimum>
   </properties>
 
 
@@ -50,7 +54,12 @@
       <dependency>
         <groupId>com.epam.brest.summer.courses2019</groupId>
         <artifactId>model</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.epam.brest.summer.courses2019</groupId>
+        <artifactId>dao</artifactId>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -88,6 +97,7 @@
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>${jacoco.version}</version>
         </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
@@ -103,6 +113,13 @@
             </dependency>
           </dependencies>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>${maven-pmd-plugin.vesrion}</version>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
@@ -118,13 +135,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>${maven-project-info-reports-plugin.version}</version>
         </plugin>
 
         <plugin>
           <groupId>org.eluder.coveralls</groupId>
           <artifactId>coveralls-maven-plugin</artifactId>
-          <version>4.3.0</version>
+          <version>${coveralls-maven-plugin.version}</version>
         </plugin>
 
       </plugins>
@@ -201,6 +218,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -223,6 +241,22 @@
               <goal>javadoc</goal>
             </goals>
             <phase>site</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
+          <failOnViolation>true</failOnViolation> <!-- this is actually true by default, but can be disabled -->
+          <printFailingErrors>true</printFailingErrors>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -258,6 +292,17 @@
           </reportSet>
         </reportSets>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
+          <linkXref>true</linkXref>
+          <sourceEncoding>utf-8</sourceEncoding>
+          <minimumTokens>100</minimumTokens>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -299,3 +344,4 @@
     </plugins>
   </reporting>
 </project>
+
