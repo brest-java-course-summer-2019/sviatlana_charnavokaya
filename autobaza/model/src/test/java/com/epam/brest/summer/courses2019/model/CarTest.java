@@ -29,4 +29,22 @@ public class CarTest {
         Assert.assertTrue(car.getFixed().equals(true));
     }
 
+    @Test
+    public void getCarNunber() {
+        car.setCarNumber("44-72 AA-1");
+        Assert.assertTrue(car.getCarNumber().equals("44-72 AA-1"));
+    }
+
+    @Test
+    public void getLoadCapacity() {
+        car.setLoadCapacity(20);
+        Assert.assertTrue(car.getLoadCapacity().equals(20));
+    }
+
+    @Test
+    public void getCarCharacteristics() {
+        car.setCarСharacteristics("Тент");
+        Assert.assertTrue(car.getCarСharacteristics().equals("Тент"));
+    }
+
 }
