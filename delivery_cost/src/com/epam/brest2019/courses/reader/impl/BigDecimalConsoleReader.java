@@ -5,7 +5,7 @@ import com.epam.brest2019.courses.reader.ConsoleReader;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class BigDecemalConsoleReader implements ConsoleReader<BigDecimal> {
+public class BigDecimalConsoleReader implements ConsoleReader<BigDecimal> {
 
     public static final String QUIT_SYMBOL = "q";
 
