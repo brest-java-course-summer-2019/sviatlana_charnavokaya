@@ -1,12 +1,14 @@
 package com.epam.brest2019.courses.scale.impl;
 
 import com.epam.brest2019.courses.scale.ValueScale;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+@Component
 public class CSVValueScale implements ValueScale <Integer, BigDecimal> {
     @Override
     public BigDecimal getValue(Map<Integer, BigDecimal> map, BigDecimal targetKey) {

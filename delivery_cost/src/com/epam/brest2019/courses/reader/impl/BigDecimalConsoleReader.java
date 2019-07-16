@@ -1,10 +1,12 @@
 package com.epam.brest2019.courses.reader.impl;
 
 import com.epam.brest2019.courses.reader.ConsoleReader;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+@Component
 public class BigDecimalConsoleReader implements ConsoleReader<BigDecimal> {
 
     public static final String QUIT_SYMBOL = "q";
