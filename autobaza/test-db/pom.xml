@@ -5,7 +5,7 @@
 
     <artifactId>test-db</artifactId>
 
-    <name>Autobaza Test DB Module</name>
+    <name>Autobaza Test DB</name>
 
     <parent>
         <groupId>com.epam.brest.summer.courses2019</groupId>

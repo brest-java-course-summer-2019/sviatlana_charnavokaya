@@ -43,8 +43,14 @@ public class CarTest {
 
     @Test
     public void getCarCharacteristics() {
-        car.setCarСharacteristics("Тент");
-        Assert.assertTrue(car.getCarСharacteristics().equals("Тент"));
+        car.setCarCharacteristics("Тент");
+        Assert.assertTrue(car.getCarCharacteristics().equals("Тент"));
+    }
+
+    @Test
+    public void getCarDriver() {
+        car.setCarDriver("Петров Петр Петрович");
+        Assert.assertTrue(car.getCarDriver().equals("Петров Петр Петрович"));
     }
 
 }
