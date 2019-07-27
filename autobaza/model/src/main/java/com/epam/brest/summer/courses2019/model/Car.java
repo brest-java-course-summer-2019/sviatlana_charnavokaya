@@ -28,7 +28,7 @@ public class Car {
     /**
      * Car Сharacteristics.
      */
-    private String carСharacteristics;
+    private String carCharacteristics;
 
     /**
      * Car Driver.
@@ -56,8 +56,8 @@ public class Car {
         this.loadCapacity = loadCapacity;
     }
 
-    public void setCarСharacteristics(String carСharacteristics) {
-        this.carСharacteristics = carСharacteristics;
+    public void setCarCharacteristics(String carCharacteristics) {
+        this.carCharacteristics = carCharacteristics;
     }
 
     public void setCarDriver(String carDriver) {
@@ -84,8 +84,8 @@ public class Car {
         return loadCapacity;
     }
 
-    public String getCarСharacteristics() {
-        return carСharacteristics;
+    public String getCarCharacteristics() {
+        return carCharacteristics;
     }
 
     public String getCarDriver() {
