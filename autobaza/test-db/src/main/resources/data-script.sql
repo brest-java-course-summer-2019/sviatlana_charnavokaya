@@ -1,1 +1,3 @@
 INSERT INTO car (car_model, car_number, load_capacity, car_characteristics, car_driver) VALUES ('Mers', '11-44 AA-1', 10, 'тент', 'Попов');
+INSERT INTO car (car_model, car_number, load_capacity, car_characteristics, car_driver) VALUES ('Volvo', '99-88 AM-1', 15, 'реф', 'Соловьев');
+INSERT INTO car (car_model, car_number, load_capacity, car_characteristics, car_driver) VALUES ('MAZ', '02-03 AB-1', 20, 'негабарит', 'Волков');

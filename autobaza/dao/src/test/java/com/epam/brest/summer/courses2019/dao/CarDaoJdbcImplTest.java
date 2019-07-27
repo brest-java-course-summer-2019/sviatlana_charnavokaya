@@ -32,7 +32,7 @@ public class CarDaoJdbcImplTest {
     @Test
     public void addCar() {
         Car testCar = new Car();
-        testCar.setCarModel("Mersedes");
+        testCar.setCarModel("Mercedes");
         testCar.setCarNumber("55-44 AB-7");
         testCar.setLoadCapacity(10);
         testCar.setCarCharacteristics("ref");

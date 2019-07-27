@@ -16,6 +16,7 @@
     <module>dao</module>
     <!--<module>web-app</module> -->
     <module>test-db</module>
+      <module>service</module>
   </modules>
 
   <distributionManagement>
