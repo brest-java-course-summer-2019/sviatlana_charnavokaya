@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png"
+          href="../../resources/static/img/icons/favicon.ico"
+          th:href="@{/resources/static/img/icons/favicon.ico}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/fontawesome.min.css"
+          th:href="@{/resources/static/css/font-awesome.min.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/bootstrap.css"
+          th:href="@{/resources/static/css/bootstrap.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/style.css"
+          th:href="@{/resources/static/css/style.css}">
+    <title>Edit Trip</title>
+</head>
+
+<body>
+
+<header>
+    <nav class="pl-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/" class="navbar-brand"><img src="../../resources/static/img/logo.png"
+                                              th:src="@{/resources/static/img/logo.png}"
+                                              height="64" width="64" alt="Autobaza"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-item nav-link active"
+                   href="cars.html"
+                   th:href="@{/cars}">Cars</a>
+                <a class="nav-item nav-link"
+                   href="drivers.html"
+                   th:href="@{/drivers}">Drivers</a>
+                <a class="nav-item nav-link active"
+                   href="requests.html"
+                   th:href="@{/requests}">Requests</a>
+                <a class="nav-item nav-link"
+                   href="trips.html"
+                   th:href="@{/trips}">Trips</a>
+            </ul>
+        </div>
+    </nav>
+    <nav id="main-header" class="py-1 navbar navbar-expand-sm navbar-light bg-light text-dark">
+        <span class="navbar-brand text-uppercase mr-auto">Edit Trip</span>
+        <ul class="navbar-nav float-right">
+            <li class="nav-item">
+                <a href="trips.html"
+                   th:href="@{/trips}"
+                   class="btn btn-secondary"
+                   title="Back"
+                   data-toggle="tooltip"
+                   data-placement="bottom">Back</a>
+            </li>
+            <li class="nav-item">
+                <a href="trips.html"
+                   th:href="@{/trips}"
+                   class="btn btn-primary"
+                   title="Add trip"
+                   data-toggle="tooltip"
+                   data-placement="bottom">Save</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section id="trip">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="form-control-label"
+                                       for="field_date">Date</label>
+                                <input class="form-control "
+                                       id="field_date"
+                                       type="date" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label"
+                                       for="field_number">Car Number</label>
+                                <input class="form-control"
+                                       id="field_number"
+                                       type="text" value="AA-1 22-33">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label"
+                                       for="field_distance">Distance</label>
+                                <input class="form-control"
+                                       id="field_distance"
+                                       type="text" value="10">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label"
+                                       for="field_status">Trip status</label>
+                                <select class="form-control"
+                                        id="field_status">
+                                    <option>Заявка</option>
+                                    <option>В пути</option>
+                                    <option>Закрыт</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <hr/>
+    <p class="text-center">&copy; 2019</p>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../../resources/static/js/jquery-3.2.1.min.js"
+        th:src="@{/resources/static/js/jquery-3.2.1.min.js}"></script>
+<script src="../../resources/static/js/popper.min.js"
+        th:src="@{/resources/static/js/popper.min.js}"></script>
+<script src="../../resources/static/js/bootstrap.min.js"
+        th:src="@{/resources/static/js/bootstrap.min.js}"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+</html>

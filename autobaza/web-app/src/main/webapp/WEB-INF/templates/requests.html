@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/png"
+          href="../../resources/static/img/icons/favicon.ico"
+          th:href="@{/resources/static/img/icons/favicon.ico}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/fontawesome.min.css"
+          th:href="@{/resources/static/css/font-awesome.min.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/bootstrap.css"
+          th:href="@{/resources/static/css/bootstrap.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/style.css"
+          th:href="@{/resources/static/css/style.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/main.css"
+          th:href="@{/resources/static/css/main.css}">
+
+    <title>List Requests</title>
+</head>
+
+<body>
+
+<header>
+    <nav class="pl-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/" class="navbar-brand"><img src="../../resources/static/img/logo.png"
+                                              th:src="@{/resources/static/img/logo.png}"
+                                              height="64" width="64" alt="Autobaza"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-item nav-link active"
+                   href="cars.html"
+                   th:href="@{/cars}">Cars</a>
+                <a class="nav-item nav-link"
+                   href="drivers.html"
+                   th:href="@{/drivers}">Drivers</a>
+                <a class="nav-item nav-link active"
+                   href="requests.html"
+                   th:href="@{/requests}">Requests</a>
+                <a class="nav-item nav-link"
+                   href="trips.html"
+                   th:href="@{/trips}">Trips</a>
+            </ul>
+        </div>
+    </nav>
+    <nav id="main-header"
+         class="py-1 navbar navbar-expand-sm navbar-light bg-light text-dark">
+        <span class="navbar-brand text-uppercase mr-auto">Requests</span>
+        <ul class="navbar-nav float-right">
+            <li class="nav-item">
+                <a href="request.html"
+                   class="btn btn-secondary"
+                   title="Add request"
+                   data-toggle="tooltip"
+                   data-placement="bottom">Add request</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section id="requests">
+
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table">
+
+                    <div class="row header">
+                        <div class="cell">
+                            Date
+                        </div>
+                        <div class="cell">
+                            Сharacteristics
+                        </div>
+                        <div class="cell">
+                            Distance
+                        </div>
+                        <div class="cell">
+                            Car Number
+                        </div>
+                        <div class="cell">
+                            Request status
+                        </div>
+
+                        <div class="cell">
+
+                        </div>
+                        <div class="cell">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Date">
+                            26/07/2019
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                            Негабарит
+                        </div>
+                        <div class="cell" data-title="Distance">
+                            350
+                        </div>
+                        <div class="cell" data-title="Car Number">
+                            84-39 АА-7
+                        </div>
+                        <div class="cell" data-title="Request Status">
+                            Передана
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="request.html"
+                               th:href="@{/request}"
+                               class="btn btn-sm btn-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit request"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-danger"
+                                   title="Delete request"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Date">
+                            26/07/2019
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                           Реф
+                        </div>
+                        <div class="cell" data-title="Distance">
+                            1200
+                        </div>
+                        <div class="cell" data-title="Car Number">
+
+                        </div>
+                        <div class="cell" data-title="Request Status">
+                            Принята
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="request.html"
+                               th:href="@{/request}"
+                               class="btn btn-sm btn-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit request"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-danger"
+                                   title="Delete request"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Date">
+                            28/07/2019
+                        </div>
+                        <div class="cell" data-title="Сharacteristics">
+                            Тент
+                        </div>
+                        <div class="cell" data-title="Distance">
+                            220
+                        </div>
+                        <div class="cell" data-title="Car Number">
+
+                        </div>
+                        <div class="cell" data-title="Request Status">
+                            Принята
+                        </div>
+                        <div class="cell" data-title="">
+                            <a href="request.html"
+                               th:href="@{/request}"
+                               class="btn btn-sm btn-primary"
+                               role="button" aria-pressed="true"
+                               title="Edit request"
+                               data-toggle="tooltip"
+                               data-placement="top"> Edit</a>
+                        </div>
+                        <div class="cell" data-title="">
+                         <span data-toggle="modal" data-target="#deleteDialog">
+                                <a href="#" class="btn btn-sm btn-danger"
+                                   title="Delete request"
+                                   data-toggle="tooltip"
+                                   data-placement="top">Delete</a>
+                         </span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <hr/>
+    <p class="text-center">&copy; 2019</p>
+</footer>
+
+<!-- Confirm delete Modal -->
+<div class="modal fade" id="deleteDialog" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header alert-danger">
+                <h5 class="modal-title" id="exampleModalLabel">Delete request</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please confirm delete
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../../resources/static/js/jquery-3.2.1.min.js"
+        th:src="@{/resources/static/js/jquery-3.2.1.min.js}"></script>
+<script src="../../resources/static/js/popper.min.js"
+        th:src="@{/resources/static/js/popper.min.js}"></script>
+<script src="../../resources/static/js/bootstrap.min.js"
+        th:src="@{/resources/static/js/bootstrap.min.js}"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+</html>
