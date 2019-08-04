@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     /**
-     * Redirect to default page -> cars.
+     * Redirect to default page cars.
      *
      * @return redirect path
      */
