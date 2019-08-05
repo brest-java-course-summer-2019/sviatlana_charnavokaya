@@ -1,7 +1,6 @@
 package com.epam.brest.summer.courses2019.service;
 
 import com.epam.brest.summer.courses2019.model.Car;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +55,7 @@ public class CarServiceImplTest {
     void delete() {
         int id = 3;
         carService.delete(id);
-        Assertions.assertThrows(RuntimeException.class, () -> carService.findById(id));
+        assertThrows(RuntimeException.class, () -> carService.findById(id));
     }
 
  /*   private Car create() {
