@@ -13,6 +13,7 @@ public class CarController {
     /**
      * Goto cars list page.
      *
+     * @param model model
      * @return view name
      */
     @GetMapping(value = "/cars")
@@ -23,6 +24,7 @@ public class CarController {
     /**
      * Goto car page.
      *
+     * @param model model
      * @return view name
      */
     @GetMapping(value = "/car")

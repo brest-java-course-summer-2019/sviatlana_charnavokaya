@@ -236,6 +236,12 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jxr-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
         </plugin>
@@ -377,6 +383,11 @@
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <configuration>
           <failOnViolation>true</failOnViolation> <!-- this is actually true by default, but can be disabled -->
@@ -425,6 +436,11 @@
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <configuration>
           <linkXref>true</linkXref>
@@ -456,12 +472,12 @@
               <report>javadoc</report>
             </reports>
           </reportSet>
-          <reportSet>
+          <!--<reportSet>
             <id>aggregate</id>
             <reports>
               <report>aggregate</report>
             </reports>
-          </reportSet>
+          </reportSet>-->
         </reportSets>
       </plugin>
 
