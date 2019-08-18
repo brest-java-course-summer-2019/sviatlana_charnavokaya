@@ -4,9 +4,16 @@ import com.epam.brest.summer.courses2019.dao.CarDao;
 import com.epam.brest.summer.courses2019.model.Car;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ *  Car Service Interface implementation.
+ */
+@Component
+@Transactional
 public class CarServiceImpl implements CarService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CarServiceImpl.class);

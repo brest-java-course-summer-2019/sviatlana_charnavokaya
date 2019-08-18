@@ -5,16 +5,19 @@ import com.epam.brest.summer.courses2019.model.Car;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml"})
+@Transactional
+@Rollback
 public class CarDaoJdbcImplTest {
 
     private static final String CAR_NUMBER = "11-44 AA-1";
@@ -46,7 +49,7 @@ public class CarDaoJdbcImplTest {
         Car car = carDao.findById(1).get();
         assertNotNull(car);
         assertTrue(car.getCarId().equals(1));
-        assertTrue(car.getCarNumber().equals(CAR_NUMBER));
+        assertEquals(CAR_NUMBER, car.getCarNumber());
     }
 
 

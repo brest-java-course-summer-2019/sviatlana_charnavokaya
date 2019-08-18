@@ -10,12 +10,17 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ *  Car DAO Interface implementation.
+ */
+@Component
 public class CarDaoJdbcImpl implements CarDao {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
