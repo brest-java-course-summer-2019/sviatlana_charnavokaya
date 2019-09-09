@@ -57,6 +57,7 @@
         <ul class="navbar-nav float-right">
             <li class="nav-item">
                 <a href="car.html"
+                   th:href="@{/car}"
                    class="btn btn-secondary"
                    title="Add car"
                    data-toggle="tooltip"
@@ -100,28 +101,29 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="cell" data-title="Model">
+
+                    <div th:each="car : ${cars}" class="row">
+                        <div th:text="${car.carModel}" class="cell" data-title="Model">
                             Volkswagen
                         </div>
-                        <div class="cell" data-title="Number">
+                        <div th:text="${car.carNumber}" class="cell" data-title="Number">
                             55-33 AA-1
                         </div>
-                        <div class="cell" data-title="Load Capacity">
+                        <div th:text="${car.loadCapacity}" class="cell" data-title="Load Capacity">
                             10
                         </div>
-                        <div class="cell" data-title="Сharacteristics">
+                        <div th:text="${car.carCharacteristics}" class="cell" data-title="Сharacteristics">
                             Реф
                         </div>
-                        <div class="cell" data-title="Driver">
+                        <div th:text="${car.carDriver}" class="cell" data-title="Driver">
                             Иванов И.И.
                         </div>
-                        <div class="cell" data-title="Fixed">
+                        <div th:text="${car.carModel}" class="cell" data-title="Fixed">
                             Да
                         </div>
                         <div class="cell" data-title="">
                             <a href="car.html"
-                               th:href="@{/car}"
+                               th:href="@{|/car/${car.carId}|}"
                                class="btn btn-sm btn-primary"
                                role="button" aria-pressed="true"
                                title="Edit car"
@@ -129,7 +131,9 @@
                                data-placement="top"> Edit</a>
                         </div>
                         <div class="cell" data-title="">
-                         <span data-toggle="modal" data-target="#deleteDialog">
+                         <span data-toggle="modal"
+                               data-target="#deleteDialog"
+                               th:attr="data-id=${car.carId},data-model=${car.carModel}, data-number=${car.carNumber}">
                                 <a href="#" class="btn btn-sm btn-danger"
                                    title="Delete car"
                                    data-toggle="tooltip"
@@ -138,7 +142,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div th:remove="all" class="row">
                         <div class="cell" data-title="Model">
                             Iveco
                         </div>
@@ -176,7 +180,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div th:remove="all" class="row">
                         <div class="cell" data-title="Model">
                             Scania
                         </div>
@@ -245,7 +249,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <a id="deleteUrl" href="#" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
@@ -262,6 +266,11 @@
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
+    })
+    $('#deleteDialog').on('show.bs.modal', function (event) {
+        var target = $(event.relatedTarget)
+        $(this).find('.modal-body').text('Please confirm delete car: "' + target.data('model') + ' '+ target.data('number') + '"')
+        document.getElementById('deleteUrl').href = '/car/' + target.data('id') + '/delete';
     })
 </script>
 </body>

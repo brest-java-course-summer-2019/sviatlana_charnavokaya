@@ -44,6 +44,7 @@
     <mockito.version>2.23.4</mockito.version>
     <logback.version>1.2.3</logback.version>
     <jackson-databind.version>2.9.9.3</jackson-databind.version>
+    <validation-api.version>2.0.1.Final</validation-api.version>
 
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
@@ -139,6 +140,12 @@
         <artifactId>h2</artifactId>
         <version>1.4.199</version>
 <!--        <scope>test</scope>-->
+      </dependency>
+
+      <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>${validation-api.version}</version>
       </dependency>
 
       <dependency>
