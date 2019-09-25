@@ -19,7 +19,10 @@
             <groupId>com.epam.brest.summer.courses2019</groupId>
             <artifactId>model</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.epam.brest.summer.courses2019</groupId>
+            <artifactId>dao-api</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.epam.brest.summer.courses2019</groupId>
             <artifactId>test-db</artifactId>
