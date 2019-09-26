@@ -2,7 +2,7 @@ package com.epam.brest.summer.courses2019.web_app;
 
 import com.epam.brest.summer.courses2019.model.Car;
 import com.epam.brest.summer.courses2019.service.CarService;
-import com.epam.brest.summer.courses2019.web_app.com.epam.brest.summer.courses2019.web_app.validators.CarValidator;
+import com.epam.brest.summer.courses2019.web_app.validators.CarValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +39,7 @@ public class CarController {
     public final String cars(Model model) {
         LOGGER.debug("findAll({})", model);
         model.addAttribute("cars", carService.findAll());
+        System.out.println("11111111111111111111111111111111111findAll({})" + model);
 
         return "cars";
     }

@@ -61,7 +61,6 @@ public class CarDaoJdbcImpl implements CarDao {
         parameters.addValue("loadCapacity", car.getLoadCapacity());
         parameters.addValue("carCharacteristics", car.getCarCharacteristics());
         parameters.addValue("carDriver", car.getCarDriver());
-       // parameters.addValue("isFixed", car.getFixed());
 
         KeyHolder generatedKeyHolder = new GeneratedKeyHolder();
         namedParameterJdbcTemplate.update(ADD_CAR, parameters, generatedKeyHolder);
@@ -119,7 +118,6 @@ public class CarDaoJdbcImpl implements CarDao {
             car.setLoadCapacity(resultSet.getInt("load_capacity"));
             car.setCarCharacteristics(resultSet.getString("car_characteristics"));
             car.setCarDriver(resultSet.getString("car_driver"));
-           // car.setFixed(resultSet.getBoolean("is_Fixed"));
             return car;
         }
     }

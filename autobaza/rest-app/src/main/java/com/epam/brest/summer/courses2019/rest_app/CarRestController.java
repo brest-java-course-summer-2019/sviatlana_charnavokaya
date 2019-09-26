@@ -28,7 +28,7 @@ public class CarRestController {
    /* @GetMapping(value = "/cars/&&&&&&&&&")
     public List<CarStub> findAllStubs() {
         LOGGER.debug("get all cars stubs");
-        return service.findAllWithAvgSalary();
+        return service.findAllWithSearch();
     }*/
 
     @GetMapping(value = "/cars/{id}")

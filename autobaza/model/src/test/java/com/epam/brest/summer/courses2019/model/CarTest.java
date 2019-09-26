@@ -24,12 +24,6 @@ public class CarTest {
     }
 
     @Test
-    public void getFixed() {
-        car.setFixed(true);
-        Assert.assertTrue(car.getFixed().equals(true));
-    }
-
-    @Test
     public void getCarNunber() {
         car.setCarNumber("44-72 AA-1");
         Assert.assertTrue(car.getCarNumber().equals("44-72 AA-1"));
@@ -51,6 +45,26 @@ public class CarTest {
     public void getCarDriver() {
         car.setCarDriver("Петров Петр Петрович");
         Assert.assertTrue(car.getCarDriver().equals("Петров Петр Петрович"));
+    }
+
+    @Test
+    public void testToString() {
+        car.setCarId(15);
+        car.setCarModel("Mersedes");
+        car.setCarNumber("44-72 AA-1");
+        car.setLoadCapacity(20);
+        car.setCarCharacteristics("Тент");
+        car.setCarDriver("Петров Петр Петрович");
+        String expected = "Car {"
+                + "carId=" + 15
+                + ", carModel='" + "Mersedes"
+                + ", carNumber='" + "44-72 AA-1"
+                + ", loadCapacity=" + 20
+                + ", carCharacteristics='" + "Тент"
+                + ", carDriver='" + "Петров Петр Петрович"
+                + "}";
+        Assert.assertTrue(expected.equals(car.toString()));
+
     }
 
 }

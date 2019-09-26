@@ -1,4 +1,4 @@
-package com.epam.brest.summer.courses2019.web_app.com.epam.brest.summer.courses2019.web_app.validators;
+package com.epam.brest.summer.courses2019.web_app.validators;
 
 import com.epam.brest.summer.courses2019.model.Car;
 import org.springframework.stereotype.Component;

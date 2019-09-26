@@ -35,10 +35,6 @@ public class Car {
      */
     private String carDriver;
 
-    /**
-     * Car is Fixed.
-     */
-    private Boolean isFixed;
 
     public void setCarId(Integer carId) {
         this.carId = carId;
@@ -62,10 +58,6 @@ public class Car {
 
     public void setCarDriver(String carDriver) {
         this.carDriver = carDriver;
-    }
-
-    public void setFixed(Boolean fixed) {
-        isFixed = fixed;
     }
 
     public Integer getCarId() {
@@ -92,7 +84,15 @@ public class Car {
         return carDriver;
     }
 
-    public Boolean getFixed() {
-        return isFixed;
+    @Override
+    public String toString() {
+        return "Car {"
+                + "carId=" + carId
+                + ", carModel='" + carModel
+                + ", carNumber='" + carNumber
+                + ", loadCapacity=" + loadCapacity
+                + ", carCharacteristics='" + carCharacteristics
+                + ", carDriver='" + carDriver
+                + "}";
     }
 }
