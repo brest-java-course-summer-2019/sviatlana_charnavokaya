@@ -22,8 +22,7 @@ import javax.validation.Valid;
 @Controller
 public class CarController {
 
-    private static final Logger LOGGER = Logg
-        erFactory.getLogger(CarController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CarController.class);
 
     @Autowired
     private CarService carService;
