@@ -5,10 +5,10 @@ import java.time.LocalDate;
 public class Trip {
 
     private Integer tripId;
-    private LocalDate dataTrip;
+    private LocalDate dateTrip;
     private Integer carId;
     private Integer distance;
-    private String tripStatus;
+    private Integer tripStatusId;
 
     public Integer getTripId() {
         return tripId;
@@ -18,12 +18,12 @@ public class Trip {
         this.tripId = tripId;
     }
 
-    public LocalDate getDataTrip() {
-        return dataTrip;
+    public LocalDate getDateTrip() {
+        return dateTrip;
     }
 
-    public void setDataTrip(LocalDate dataTrip) {
-        this.dataTrip = dataTrip;
+    public void setDateTrip(LocalDate dateTrip) {
+        this.dateTrip = dateTrip;
     }
 
     public Integer getCarId() {
@@ -42,11 +42,22 @@ public class Trip {
         this.distance = distance;
     }
 
-    public String getTripStatus() {
-        return tripStatus;
+    public Integer getTripStatusId() {
+        return tripStatusId;
     }
 
-    public void setTripStatus(String tripStatus) {
-        this.tripStatus = tripStatus;
+    public void setTripStatusId(Integer tripStatusId) {
+        this.tripStatusId = tripStatusId;
+    }
+
+    @Override
+    public String toString() {
+        return "Trip{"
+                + "tripId=" + tripId
+                + ", dateTrip=" + dateTrip
+                + ", carId=" + carId
+                + ", distance=" + distance
+                + ", tripStatusId=" + tripStatusId
+                 + "}";
     }
 }
