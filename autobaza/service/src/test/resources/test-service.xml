@@ -9,6 +9,15 @@
 
     <tx:annotation-driven/>
 
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:sql.properties</value>
+            </list>
+        </property>
+    </bean>
+
     <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
@@ -19,6 +28,14 @@
 
     <bean id="carService" class="com.epam.brest.summer.courses2019.service.CarServiceImpl">
         <constructor-arg ref="carDao"/>
+    </bean>
+
+    <bean id="tripDao" class="com.epam.brest.summer.courses2019.dao.TripDaoJdbcImpl">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
+
+    <bean id="tripService" class="com.epam.brest.summer.courses2019.service.TripServiceImpl">
+        <constructor-arg ref="tripDao"/>
     </bean>
 
 </beans>

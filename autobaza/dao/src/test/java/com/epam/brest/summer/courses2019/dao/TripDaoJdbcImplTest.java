@@ -20,7 +20,6 @@ import static org.junit.Assert.*;
 @Rollback
 public class TripDaoJdbcImplTest {
 
-    private static final Integer TRIP_ID = 2;
     private static final LocalDate DATE_TRIP = LocalDate.of(2019, 9, 01);
     private static final LocalDate UPDATE_DATE_TRIP = LocalDate.of(2019, 9, 01);
     private static final Integer CAR_ID = 6;
