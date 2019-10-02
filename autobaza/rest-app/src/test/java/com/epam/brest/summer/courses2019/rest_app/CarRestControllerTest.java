@@ -33,6 +33,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ContextConfiguration(locations = {"classpath:rest-spring-test.xml"})
 public class CarRestControllerTest {
 
+    private static final Integer CAR_ID_0 = 0;
+    private static final Integer CAR_ID_1 = 1;
+
     @Autowired
     private CarRestController controller;
 
@@ -51,11 +54,6 @@ public class CarRestControllerTest {
                 .build();
     }
 
-    /*@AfterEach
-    public void after() {
-        Mockito.verifyNoMoreInteractions(service);
-    }*/
-
     @AfterEach
     public void after() {
         Mockito.reset(carService);
@@ -65,27 +63,28 @@ public class CarRestControllerTest {
     @Test
     public void departments() throws Exception {
 
-        Mockito.when(carService.findAll()).thenReturn(Arrays.asList(createCar(0), createCar(1)));
+        Mockito.when(carService.findAll()).thenReturn(Arrays.asList(createCar(CAR_ID_0), createCar(CAR_ID_1)));
 
         mockMvc.perform(
                 MockMvcRequestBuilders.get("/cars")
                         .accept(MediaType.APPLICATION_JSON_UTF8)
         ).andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carModel", Matchers.is("def0")))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carId", Matchers.is(0)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carModel", Matchers.is("def1")))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carId", Matchers.is(1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carId", Matchers.is(CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carModel", Matchers.is("Model" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carNumber", Matchers.is("Number" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carDriver", Matchers.is("Driver" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carCharacteristics", Matchers.is("ref" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].loadCapacity", Matchers.is(1000 + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carId", Matchers.is(CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carModel", Matchers.is("Model" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carNumber", Matchers.is("Number" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carDriver", Matchers.is("Driver" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carCharacteristics", Matchers.is("ref" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].loadCapacity", Matchers.is(1000 + CAR_ID_1)))
         ;
 
         Mockito.verify(carService).findAll();
-    }
-
-    private Car createCar(int index) {
-        Car car = new Car();
-        car.setCarModel("def" + index);
-        car.setCarId(index);
-        return car;
     }
 
     @Test
@@ -127,6 +126,18 @@ public class CarRestControllerTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .content(json)
         ).andExpect(status().isAccepted());
+    }
+
+    private Car createCar(int index) {
+        Car car = new Car();
+        car.setCarId(index);
+        car.setCarModel("Model" + index);
+        car.setCarNumber("Number" + index);
+        car.setCarDriver("Driver" + index);
+        car.setCarCharacteristics("ref" + index);
+        car.setLoadCapacity(1000 + index);
+
+        return car;
     }
 
 

@@ -1,13 +1,37 @@
 package com.epam.brest.summer.courses2019.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 
+/**
+ * POJO Trip for model.
+ */
 public class Trip {
 
+    /**
+     * Trip Id.
+     */
     private Integer tripId;
+
+    /**
+     * Trip Date.
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate dateTrip;
+
+    /**
+     * Trip CarId.
+     */
     private Integer carId;
+
+    /**
+     * Trip Distance.
+     */
     private Integer distance;
+    /**
+     * Trip TripStatusId.
+     */
     private Integer tripStatusId;
 
     public Integer getTripId() {

@@ -14,4 +14,8 @@
         <constructor-arg value="com.epam.brest.summer.courses2019.service.CarService"/>
     </bean>
 
+    <bean id="tripService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.epam.brest.summer.courses2019.service.TripService"/>
+    </bean>
+
 </beans>
