@@ -10,6 +10,12 @@ import java.util.List;
  */
 public interface CarService {
 
+    /**
+     * Add new car.
+     *
+     * @param car Car.
+     * @return car.
+     */
     Car add(Car car);
 
     /**

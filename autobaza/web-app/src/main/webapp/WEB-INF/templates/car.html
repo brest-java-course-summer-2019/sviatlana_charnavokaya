@@ -17,7 +17,7 @@
           href="../../resources/static/css/style.css"
           th:href="@{/resources/static/css/style.css}">
 
-    <title>Edit Car</title>
+    <title>Car</title>
 </head>
 
 <body>
@@ -48,7 +48,8 @@
         </div>
     </nav>
     <nav id="main-header" class="py-1 navbar navbar-expand-sm navbar-light bg-light text-dark">
-        <span class="navbar-brand text-uppercase mr-auto">Edit Car</span>
+         <span class="navbar-brand text-uppercase mr-auto"
+               th:text="${isNew} ? 'New car' : 'Edit car'">Edit car</span>
         <ul class="navbar-nav float-right">
             <li class="nav-item">
                 <a href="cars.html"
@@ -61,8 +62,9 @@
             <li class="nav-item">
                 <a href="cars.html"
                    th:href="@{/cars}"
+                   th:onclick="@{document.forms['carForm'].submit(); return false;}"
                    class="btn btn-primary"
-                   title="Add car"
+                   title="Save car"
                    data-toggle="tooltip"
                    data-placement="bottom">Save</a>
             </li>
@@ -76,54 +78,87 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form id="carForm"
+                              th:object="${car}"
+                              action="cars.html"
+                              th:action="@{${#httpServletRequest.servletPath}}"
+                              th:method="@{post}">
+
+                            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                                <p>Please fix errors below:</p>
+                            </div>
+
+                            <input id="field_carId"
+                                   type="hidden"
+                                   th:field="*{carId}"/>
+
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_model">Model</label>
                                 <input class="form-control "
+                                       th:class="${#fields.hasErrors('carModel')} ? 'form-control is-invalid' : 'form-control'"
                                        id="field_model"
-                                       type="text" value="Volkswagen"/>
+                                       type="text" value="MAZ"
+                                       th:field="*{carModel}"/>
+                                <div th:if="${#fields.hasErrors('carModel')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{carModel}">[errors]</div>
                             </div>
+
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_number">Number</label>
                                 <input class="form-control"
+                                       th:class="${#fields.hasErrors('carNumber')} ? 'form-control is-invalid' : 'form-control'"
                                        id="field_number"
-                                       type="text" value="AA-1 22-33">
+                                       type="text" value="AA-1 22-33"
+                                       th:field="*{carNumber}"/>
+                                <div th:if="${#fields.hasErrors('carNumber')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{carNumber}">[errors]</div>
                             </div>
+
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_load_capacity">Load Capacity</label>
                                 <input class="form-control"
+                                       th:class="${#fields.hasErrors('loadCapacity')} ? 'form-control is-invalid' : 'form-control'"
                                        id="field_load_capacity"
-                                       type="text" value="10">
+                                       type="text" value="10"
+                                       th:field="*{loadCapacity}"/>
+                                <div th:if="${#fields.hasErrors('loadCapacity')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{loadCapacity}">[errors]</div>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label"
-                                       for="field_characteristics">Сharacteristics</label>
+                                       for="field_characteristics">Characteristics</label>
                                 <select class="form-control"
-                                       id="field_characteristics">
+                                        id="field_characteristics"
+                                        name="character">
+                                    <option th:selected="*{carCharacteristics}"
+                                            th:value="*{carId}"
+                                            th:text="*{carCharacteristics}">
+                                    </option>
                                     <option>Тент</option>
                                     <option>Реф</option>
                                     <option>Негабарит</option>
                                 </select>
                             </div>
+
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_driver">Driver</label>
                                 <input class="form-control"
+                                       th:class="${#fields.hasErrors('carDriver')} ? 'form-control is-invalid' : 'form-control'"
                                        id="field_driver"
-                                       type="text" value="Иванов И.И.">
+                                       type="text" value="Иванов И.И."
+                                       th:field="*{carDriver}"/>
+                                <div th:if="${#fields.hasErrors('carDriver')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{carDriver}">[errors]</div>
                             </div>
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input class="form-check-input"
-                                           id="field_fixed"
-                                           type="checkbox" value="">
-                                    <label class="form-check-label"
-                                           for="field_fixed">Fixed</label>
-                                </div>
-                            </div>
+
                         </form>
                     </div>
                 </div>

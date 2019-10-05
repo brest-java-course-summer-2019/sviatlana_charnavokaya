@@ -62,7 +62,17 @@ public class CarServiceImplTest {
         assertThrows(RuntimeException.class, () -> carService.findById(id));
     }
 
- /*   private Car create() {
+    @Test
+    public void add() {
+        int sizeBefore = carService.findAll().size();
+        Car car = createCar();
+        Car newCar = carService.add(car);
+        assertNotNull(newCar.getCarId());
+        assertEquals((sizeBefore + 1), carService.findAll().size());
+    }
+
+
+    private Car createCar() {
         Car car = new Car();
         car.setCarModel("Mercedes");
         car.setCarNumber("55-44 AB-7");
@@ -70,6 +80,6 @@ public class CarServiceImplTest {
         car.setCarCharacteristics("ref");
         car.setCarDriver("Скворцов С.С.");
         return car;
-    }*/
+    }
 
 }

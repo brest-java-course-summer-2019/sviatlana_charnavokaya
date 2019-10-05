@@ -1,14 +1,38 @@
 package com.epam.brest.summer.courses2019.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 
+/**
+ * POJO Trip for model.
+ */
 public class Trip {
 
+    /**
+     * Trip Id.
+     */
     private Integer tripId;
-    private LocalDate dataTrip;
+
+    /**
+     * Trip Date.
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dateTrip;
+
+    /**
+     * Trip CarId.
+     */
     private Integer carId;
+
+    /**
+     * Trip Distance.
+     */
     private Integer distance;
-    private String tripStatus;
+    /**
+     * Trip TripStatusId.
+     */
+    private Integer tripStatusId;
 
     public Integer getTripId() {
         return tripId;
@@ -18,12 +42,12 @@ public class Trip {
         this.tripId = tripId;
     }
 
-    public LocalDate getDataTrip() {
-        return dataTrip;
+    public LocalDate getDateTrip() {
+        return dateTrip;
     }
 
-    public void setDataTrip(LocalDate dataTrip) {
-        this.dataTrip = dataTrip;
+    public void setDateTrip(LocalDate dateTrip) {
+        this.dateTrip = dateTrip;
     }
 
     public Integer getCarId() {
@@ -42,11 +66,22 @@ public class Trip {
         this.distance = distance;
     }
 
-    public String getTripStatus() {
-        return tripStatus;
+    public Integer getTripStatusId() {
+        return tripStatusId;
     }
 
-    public void setTripStatus(String tripStatus) {
-        this.tripStatus = tripStatus;
+    public void setTripStatusId(Integer tripStatusId) {
+        this.tripStatusId = tripStatusId;
+    }
+
+    @Override
+    public String toString() {
+        return "Trip{"
+                + "tripId=" + tripId
+                + ", dateTrip=" + dateTrip
+                + ", carId=" + carId
+                + ", distance=" + distance
+                + ", tripStatusId=" + tripStatusId
+                 + "}";
     }
 }

@@ -20,7 +20,12 @@ import static org.junit.Assert.*;
 @Rollback
 public class CarDaoJdbcImplTest {
 
-    private static final String CAR_NUMBER = "11-44 AA-1";
+    private static final String CAR_MODEL = "Mercedes";
+    private static final String UPDATE_CAR_MODEL = "Volvo";
+    private static final String CAR_NUMBER = "16-61 AA-1";
+    private static final Integer LOAD_CAPACITY = 10;
+    private static final String CAR_CHARACTERISTICS = "реф";
+    private static final String CAR_DRIVER = "Скворцов С.С.";
 
     @Autowired
     CarDao carDao;
@@ -35,11 +40,11 @@ public class CarDaoJdbcImplTest {
     @Test
     public void addCar() {
         Car testCar = new Car();
-        testCar.setCarModel("Mercedes");
-        testCar.setCarNumber("55-44 AB-7");
-        testCar.setLoadCapacity(10);
-        testCar.setCarCharacteristics("ref");
-        testCar.setCarDriver("Скворцов С.С.");
+        testCar.setCarModel(CAR_MODEL);
+        testCar.setCarNumber(CAR_NUMBER);
+        testCar.setLoadCapacity(LOAD_CAPACITY);
+        testCar.setCarCharacteristics(CAR_CHARACTERISTICS);
+        testCar.setCarDriver(CAR_DRIVER);
         Car newCar = carDao.add(testCar);
         assertNotNull(newCar.getCarId());
     }
@@ -49,15 +54,19 @@ public class CarDaoJdbcImplTest {
         Car car = carDao.findById(1).get();
         assertNotNull(car);
         assertTrue(car.getCarId().equals(1));
-        assertEquals(CAR_NUMBER, car.getCarNumber());
+        assertEquals("Mercedes", car.getCarModel());
+        assertEquals("11-44 AA-1", car.getCarNumber());
+        assertTrue(car.getLoadCapacity().equals(10));
+        assertEquals("тент", car.getCarCharacteristics());
+        assertEquals("Попов", car.getCarDriver());
     }
 
 
     @Test
     public void updateCar() {
-        Car newCar = new Car();
+        Car newCar = createCar();
         newCar = carDao.add(newCar);
-        newCar.setCarModel("Volksvagen");
+        newCar.setCarModel(UPDATE_CAR_MODEL);
         carDao.update(newCar);
         Car updatedCar = carDao.findById(newCar.getCarId()).get();
         assertTrue(newCar.getCarId().equals(updatedCar.getCarId()));
@@ -66,13 +75,22 @@ public class CarDaoJdbcImplTest {
 
     @Test
     public void deleteCar() {
-        Car car = new Car();
-        car.setCarModel("Volksvagen");
+        Car car = createCar();
         car = carDao.add(car);
         List<Car> cars = carDao.findAll();
         int sizeBefore = cars.size();
         carDao.delete(car.getCarId());
         assertTrue((sizeBefore - 1) == carDao.findAll().size());
+    }
+
+    private Car createCar() {
+        Car car = new Car();
+        car.setCarModel(CAR_MODEL);
+        car.setCarNumber(CAR_NUMBER);
+        car.setLoadCapacity(LOAD_CAPACITY);
+        car.setCarCharacteristics(CAR_CHARACTERISTICS);
+        car.setCarDriver(CAR_DRIVER);
+        return car;
     }
 
 }
