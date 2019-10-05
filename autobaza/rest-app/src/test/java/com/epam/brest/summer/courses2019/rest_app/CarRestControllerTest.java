@@ -100,7 +100,7 @@ public class CarRestControllerTest {
         Mockito.when(carService.add(any(Car.class))).thenReturn(expectedCar);
 
         MockHttpServletResponse response = mockMvc.perform(
-                post("/department")
+                post("/cars")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json)
@@ -119,9 +119,9 @@ public class CarRestControllerTest {
     public void updateCar() throws Exception {
 
         Car car = createCar(1);
-        String json = new ObjectMapper().writeValueAsString(car);
+        String json = objectMapper.writeValueAsString(car);
 
-        mockMvc.perform(put("/car")
+        mockMvc.perform(put("/cars")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .content(json)

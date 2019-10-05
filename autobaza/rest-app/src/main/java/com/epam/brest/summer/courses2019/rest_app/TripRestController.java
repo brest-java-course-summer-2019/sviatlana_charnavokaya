@@ -32,7 +32,7 @@ public class TripRestController {
         return service.findById(id);
     }
 
-    @PutMapping()
+    @PutMapping(value = "/trips")
     @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void update(@RequestBody Trip trip) {
         LOGGER.debug("update trip ({})", trip);
@@ -45,7 +45,7 @@ public class TripRestController {
         service.delete(id);
     }
 
-    @PostMapping()
+    @PostMapping(value = "/trips")
     public ResponseEntity<Trip> add(@RequestBody Trip trip) {
 
         LOGGER.debug("add trip({})", trip);

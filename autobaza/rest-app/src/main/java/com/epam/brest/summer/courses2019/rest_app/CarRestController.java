@@ -19,7 +19,7 @@ public class CarRestController {
     @Autowired
     private CarService service;
 
-    @GetMapping(value = "/cars")
+   @GetMapping(value = "/cars")
     public Collection<Car> findAll() {
         LOGGER.debug("get all cars");
         return service.findAll();
@@ -38,7 +38,7 @@ public class CarRestController {
         return service.findById(id);
     }
 
-    @PutMapping()
+    @PutMapping(value = "/cars")
     @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void update(@RequestBody Car car) {
         LOGGER.debug("update car ({})", car);
@@ -51,7 +51,7 @@ public class CarRestController {
         service.delete(id);
     }
 
-    @PostMapping()
+    @PostMapping(value = "/cars")
     public ResponseEntity<Car> add(@RequestBody Car car) {
 
         LOGGER.debug("add car({})", car);
