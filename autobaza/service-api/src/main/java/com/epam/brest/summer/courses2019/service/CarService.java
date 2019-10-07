@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.service;
 
 import com.epam.brest.summer.courses2019.model.Car;
+import com.epam.brest.summer.courses2019.model.stub.CarStub;
 
 import java.util.List;
 
@@ -38,6 +39,13 @@ public interface CarService {
      * @return cars.
      */
     List<Car> findAll();
+
+    /**
+     * Get all cars with number of trips and total distance by car.
+     *
+     * @return car list.
+     */
+    List<CarStub> findAllWithDistanceAndTrips();
 
     /**
      * Find Car By Id.

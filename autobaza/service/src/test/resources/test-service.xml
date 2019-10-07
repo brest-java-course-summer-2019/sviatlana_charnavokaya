@@ -26,8 +26,13 @@
         <constructor-arg ref="namedParameterJdbcTemplate"/>
     </bean>
 
+    <bean id="carStubDao" class="com.epam.brest.summer.courses2019.dao.CarStubDaoJdbcImpl">
+        <constructor-arg ref="namedParameterJdbcTemplate"/>
+    </bean>
+
     <bean id="carService" class="com.epam.brest.summer.courses2019.service.CarServiceImpl">
         <constructor-arg ref="carDao"/>
+        <constructor-arg ref="carStubDao"/>
     </bean>
 
     <bean id="tripDao" class="com.epam.brest.summer.courses2019.dao.TripDaoJdbcImpl">

@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.rest_app;
 
 import com.epam.brest.summer.courses2019.model.Car;
+import com.epam.brest.summer.courses2019.model.stub.CarStub;
 import com.epam.brest.summer.courses2019.service.CarService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,11 +26,11 @@ public class CarRestController {
         return service.findAll();
     }
 
-   /* @GetMapping(value = "/cars/&&&&&&&&&")
-    public List<CarStub> findAllStubs() {
+    @GetMapping(value = "/cars/with_distance_and_trips")
+    public Collection<CarStub> findAllStubs() {
         LOGGER.debug("get all cars stubs");
-        return service.findAllWithSearch();
-    }*/
+        return service.findAllWithDistanceAndTrips();
+    }
 
     @GetMapping(value = "/cars/{id}")
     @ResponseStatus(value = HttpStatus.OK)
