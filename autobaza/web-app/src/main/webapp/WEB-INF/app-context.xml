@@ -34,6 +34,11 @@
         <constructor-arg index="1" ref="restTemplate"/>
     </bean>
 
+    <bean id="tripService" class="com.epam.brest.summer.courses2019.web_app.consumers.TripRestConsumer">
+        <constructor-arg index="0" value="${protocol}://${host}:${port}/${point.trips}"/>
+        <constructor-arg index="1" ref="restTemplate"/>
+    </bean>
+
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
         <property name="messageConverters">
             <list>

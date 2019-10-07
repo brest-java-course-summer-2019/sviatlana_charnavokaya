@@ -40,7 +40,6 @@ public class CarController {
     public final String cars(Model model) {
         LOGGER.debug("findAll({})", model);
         model.addAttribute("cars", carService.findAll());
-       // System.out.println("11111111111111111111111111111111111findAll({})" + model);
 
         return "cars";
     }
