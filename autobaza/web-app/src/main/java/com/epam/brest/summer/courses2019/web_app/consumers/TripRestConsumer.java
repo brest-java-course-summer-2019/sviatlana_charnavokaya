@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.web_app.consumers;
 
 import com.epam.brest.summer.courses2019.model.Trip;
+import com.epam.brest.summer.courses2019.model.TripStatus;
 import com.epam.brest.summer.courses2019.service.TripService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,5 +57,17 @@ public class TripRestConsumer implements TripService {
         LOGGER.debug("findById({})", tripId);
         ResponseEntity<Trip> responseEntity = restTemplate.getForEntity(url + "/" + tripId, Trip.class);
         return responseEntity.getBody();
+    }
+
+    @Override
+    public List<TripStatus> findAllTripStatuses() {
+        LOGGER.debug("findAllTripStatuses()");
+        ResponseEntity responseEntity = restTemplate.getForEntity(url + "Statuses/", List.class);
+        return (List<TripStatus>) responseEntity.getBody();
+    }
+
+    @Override
+    public TripStatus findTripStatusById(Integer tripStatusId) {
+        return null;
     }
 }

@@ -1,7 +1,9 @@
 package com.epam.brest.summer.courses2019.service;
 
 import com.epam.brest.summer.courses2019.dao.TripDao;
+import com.epam.brest.summer.courses2019.dao.TripStatusDao;
 import com.epam.brest.summer.courses2019.model.Trip;
+import com.epam.brest.summer.courses2019.model.TripStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -20,8 +22,11 @@ public class TripServiceImpl implements TripService{
 
     private TripDao tripDao;
 
-    public TripServiceImpl(TripDao tripDao){
+    private TripStatusDao tripStatusDao;
+
+    public TripServiceImpl(TripDao tripDao, TripStatusDao tripStatusDao){
         this.tripDao = tripDao;
+        this.tripStatusDao = tripStatusDao;
     }
 
 
@@ -53,6 +58,19 @@ public class TripServiceImpl implements TripService{
     public Trip findById(Integer tripId) {
         LOGGER.debug("findById({})", tripId);
         return tripDao.findById(tripId)
+                .orElseThrow(() -> new RuntimeException("Failed to get trip from DB"));
+    }
+
+    @Override
+    public List<TripStatus> findAllTripStatuses() {
+        LOGGER.debug("Find all trip statuses");
+        return tripStatusDao.findAll();
+    }
+
+    @Override
+    public TripStatus findTripStatusById(Integer tripStatusId) {
+        LOGGER.debug("findTripStatusById({})", tripStatusId);
+        return tripStatusDao.findById(tripStatusId)
                 .orElseThrow(() -> new RuntimeException("Failed to get trip from DB"));
     }
 }

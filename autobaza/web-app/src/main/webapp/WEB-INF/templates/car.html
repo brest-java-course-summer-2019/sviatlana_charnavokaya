@@ -36,12 +36,6 @@
                    href="cars.html"
                    th:href="@{/cars}">Cars</a>
                 <a class="nav-item nav-link"
-                   href="drivers.html"
-                   th:href="@{/drivers}">Drivers</a>
-                <a class="nav-item nav-link active"
-                   href="requests.html"
-                   th:href="@{/requests}">Requests</a>
-                <a class="nav-item nav-link"
                    href="trips.html"
                    th:href="@{/trips}">Trips</a>
             </ul>
@@ -133,17 +127,14 @@
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_characteristics">Characteristics</label>
-                                <select class="form-control"
+                                <input class="form-control"
+                                        th:class="${#fields.hasErrors('carCharacteristics')} ? 'form-control is-invalid' : 'form-control'"
                                         id="field_characteristics"
-                                        name="character">
-                                    <option th:selected="*{carCharacteristics}"
-                                            th:value="*{carId}"
-                                            th:text="*{carCharacteristics}">
-                                    </option>
-                                    <option>Тент</option>
-                                    <option>Реф</option>
-                                    <option>Негабарит</option>
-                                </select>
+                                        type="text" value="реф"
+                                        th:field="*{carCharacteristics}"/>
+                                <div th:if="${#fields.hasErrors('carCharacteristics')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{loadCapacity}">[errors]</div>
                             </div>
 
                             <div class="form-group">

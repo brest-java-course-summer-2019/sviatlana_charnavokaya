@@ -55,7 +55,7 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public List<CarStub> findAllWithDistanceAndTrips() {
-        LOGGER.debug("Find all cars with total distance fnd number of trips");
+        LOGGER.debug("Find all cars with total distance and number of trips");
         return carStubDao.findAllWithDistanceAndTrips();
     }
 

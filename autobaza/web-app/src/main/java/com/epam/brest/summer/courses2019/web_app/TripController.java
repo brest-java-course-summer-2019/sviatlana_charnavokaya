@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.web_app;
 
 import com.epam.brest.summer.courses2019.model.Trip;
+import com.epam.brest.summer.courses2019.service.CarService;
 import com.epam.brest.summer.courses2019.service.TripService;
 import com.epam.brest.summer.courses2019.web_app.validators.TripValidator;
 import org.slf4j.Logger;
@@ -28,6 +29,9 @@ public class TripController {
     private TripService tripService;
 
     @Autowired
+    private CarService carService;
+
+    @Autowired
     TripValidator tripValidator;
 
     /**
@@ -40,6 +44,8 @@ public class TripController {
     public final String trips(Model model) {
         LOGGER.debug("findAll({})", model);
         model.addAttribute("trips", tripService.findAll());
+        model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
+        model.addAttribute("cars", carService.findAll());
         return "trips";
     }
 
