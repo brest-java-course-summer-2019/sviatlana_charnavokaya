@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.web_app.consumers;
 
 import com.epam.brest.summer.courses2019.model.Car;
+import com.epam.brest.summer.courses2019.model.stub.CarStub;
 import com.epam.brest.summer.courses2019.service.CarService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,12 +30,13 @@ public class CarRestConsumer implements CarService{
         return (List<Car>) responseEntity.getBody();
     }
 
-   /* @Override
-    public List<CarStub> findAllWithAvgSalary() {
-        LOGGER.debug("findAllWithAvgSalary()");
-        ResponseEntity responseEntity = restTemplate.getForEntity(url + "/with_avg_salary", List.class);
+    @Override
+    public List<CarStub> findAllWithDistanceAndTrips() {
+        LOGGER.debug("findAllWithDistanceAndTrips()");
+        ResponseEntity responseEntity = restTemplate.getForEntity(url + "/all/", List.class);
         return (List<CarStub>) responseEntity.getBody();
-    }*/
+    }
+
 
     @Override
     public Car findById(Integer id) {

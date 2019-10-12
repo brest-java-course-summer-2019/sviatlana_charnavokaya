@@ -16,7 +16,7 @@
     <link rel="stylesheet"
           href="../../resources/static/css/style.css"
           th:href="@{/resources/static/css/style.css}">
-    <title>Edit Trip</title>
+    <title>Trip</title>
 </head>
 
 <body>
@@ -33,13 +33,7 @@
             <ul class="navbar-nav">
                 <a class="nav-item nav-link active"
                    href="cars.html"
-                   th:href="@{/cars}">Cars</a>
-                <a class="nav-item nav-link"
-                   href="drivers.html"
-                   th:href="@{/drivers}">Drivers</a>
-                <a class="nav-item nav-link active"
-                   href="requests.html"
-                   th:href="@{/requests}">Requests</a>
+                   th:href="@{/cars/all}">Cars</a>
                 <a class="nav-item nav-link"
                    href="trips.html"
                    th:href="@{/trips}">Trips</a>
@@ -47,7 +41,8 @@
         </div>
     </nav>
     <nav id="main-header" class="py-1 navbar navbar-expand-sm navbar-light bg-light text-dark">
-        <span class="navbar-brand text-uppercase mr-auto">Edit Trip</span>
+        <span class="navbar-brand text-uppercase mr-auto"
+              th:text="${isNew} ? 'New trip' : 'Edit trip'">Edit trip</span>
         <ul class="navbar-nav float-right">
             <li class="nav-item">
                 <a href="trips.html"
@@ -60,6 +55,7 @@
             <li class="nav-item">
                 <a href="trips.html"
                    th:href="@{/trips}"
+                   th:onclick="@{document.forms['tripForm'].submit(); return false;}"
                    class="btn btn-primary"
                    title="Add trip"
                    data-toggle="tooltip"
@@ -75,36 +71,71 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form id="tripForm"
+                              th:object="${trip}"
+                              action="cars.html"
+                              th:action="@{${#httpServletRequest.servletPath}}"
+                              th:method="@{post}">
+
+                            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                                <p>Please fix errors below:</p>
+                            </div>
+
+                            <input id="field_tripId"
+                                   type="hidden"
+                                   th:field="*{tripId}"/>
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_date">Date</label>
                                 <input class="form-control "
+                                       th:class="${#fields.hasErrors('dateTrip')} ? 'form-control is-invalid' : 'form-control'"
                                        id="field_date"
-                                       type="date" value=""/>
+                                       type="date" value=""
+                                       th:field="*{dateTrip}"/>
+                                <div th:if="${#fields.hasErrors('dateTrip')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{dateTrip}">[errors]</div>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_number">Car Number</label>
-                                <input class="form-control"
-                                       id="field_number"
-                                       type="text" value="AA-1 22-33">
+                                <select class="form-control" th:field="*{carId}">
+                                    <option th:each="car : ${cars}"
+                                            th:value="${car.carId}"
+                                            th:text="${car.carNumber}"
+                                            th:selected="${car.carId} == ${trip.carId}"
+                                            id="field_number">11-22 AA-1
+                                    </option>
+                                    <option th:remove="all">Заявка</option>
+                                    <option th:remove="all">В пути</option>
+                                    <option th:remove="all">Закрыт</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_distance">Distance</label>
                                 <input class="form-control"
+                                       th:class="${#fields.hasErrors('distance')} ? 'form-control is-invalid' : 'form-control'"
                                        id="field_distance"
-                                       type="text" value="10">
+                                       type="text" value="100"
+                                       th:field="*{distance}"/>
+                                <div th:if="${#fields.hasErrors('distance')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{distance}">[errors]</div>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_status">Trip status</label>
-                                <select class="form-control"
-                                        id="field_status">
-                                    <option>Заявка</option>
-                                    <option>В пути</option>
-                                    <option>Закрыт</option>
+                                <select class="form-control" th:field="*{tripStatusId}">
+                                    <option th:each="tripStatus : ${tripStatuses}"
+                                            th:value="${tripStatus.tripStatusId}"
+                                            th:text="${tripStatus.tripStatusName}"
+                                            th:selected="${tripStatus.tripStatusId} == ${trip.tripStatusId}"
+                                            id="field_status">Принят
+                                    </option>
+                                    <option th:remove="all">Заявка</option>
+                                    <option th:remove="all">В пути</option>
+                                    <option th:remove="all">Закрыт</option>
                                 </select>
                             </div>
                         </form>

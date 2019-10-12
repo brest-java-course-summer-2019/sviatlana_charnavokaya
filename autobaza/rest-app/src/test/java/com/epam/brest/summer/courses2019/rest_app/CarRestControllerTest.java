@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.rest_app;
 
 import com.epam.brest.summer.courses2019.model.Car;
+import com.epam.brest.summer.courses2019.model.stub.CarStub;
 import com.epam.brest.summer.courses2019.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
@@ -61,7 +62,7 @@ public class CarRestControllerTest {
 
 
     @Test
-    public void departments() throws Exception {
+    public void cars() throws Exception {
 
         Mockito.when(carService.findAll()).thenReturn(Arrays.asList(createCar(CAR_ID_0), createCar(CAR_ID_1)));
 
@@ -86,6 +87,36 @@ public class CarRestControllerTest {
 
         Mockito.verify(carService).findAll();
     }
+
+    @Test
+    public void getStubCars() throws Exception {
+
+        Mockito.when(carService.findAllWithDistanceAndTrips()).thenReturn(Arrays.asList(createCarStub(CAR_ID_0), createCarStub(CAR_ID_1)));
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("/cars/all/")
+                        .accept(MediaType.APPLICATION_JSON_UTF8)
+        ).andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carId", Matchers.is(CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carModel", Matchers.is("Model" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carNumber", Matchers.is("Number" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carDriver", Matchers.is("Driver" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carCharacteristics", Matchers.is("ref" + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].loadCapacity", Matchers.is(1000 + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].totalDistance", Matchers.is(2323 + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].numberOfTrips", Matchers.is(5 + CAR_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carId", Matchers.is(CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carModel", Matchers.is("Model" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carNumber", Matchers.is("Number" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carDriver", Matchers.is("Driver" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carCharacteristics", Matchers.is("ref" + CAR_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].loadCapacity", Matchers.is(1000 + CAR_ID_1)))
+        ;
+
+        Mockito.verify(carService).findAllWithDistanceAndTrips();
+    }
+
 
     @Test
     public void addCar() throws Exception {
@@ -139,6 +170,21 @@ public class CarRestControllerTest {
 
         return car;
     }
+
+    private CarStub createCarStub(int index) {
+        CarStub car = new CarStub();
+        car.setCarId(index);
+        car.setCarModel("Model" + index);
+        car.setCarNumber("Number" + index);
+        car.setCarDriver("Driver" + index);
+        car.setCarCharacteristics("ref" + index);
+        car.setLoadCapacity(1000 + index);
+        car.setNumberOfTrips(5 + index);
+        car.setTotalDistance(2323 + index);
+
+        return car;
+    }
+
 
 
 }

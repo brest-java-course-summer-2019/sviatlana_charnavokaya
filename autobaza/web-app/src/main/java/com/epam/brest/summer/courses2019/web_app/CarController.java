@@ -40,7 +40,20 @@ public class CarController {
     public final String cars(Model model) {
         LOGGER.debug("findAll({})", model);
         model.addAttribute("cars", carService.findAll());
-       // System.out.println("11111111111111111111111111111111111findAll({})" + model);
+
+        return "cars";
+    }
+
+    /**
+     * Goto cars list page with distance and trips.
+     *
+     * @param model model
+     * @return view name
+     */
+    @GetMapping(value = "/cars/all")
+    public final String findAllWithDistanceAndTrips(Model model) {
+        LOGGER.debug("findAllWithDistanceAndTrips({})", model);
+        model.addAttribute("cars", carService.findAllWithDistanceAndTrips());
 
         return "cars";
     }
@@ -86,7 +99,7 @@ public class CarController {
     public final String deleteCarById(@PathVariable Integer id, Model model) {
         LOGGER.debug("delete({},{})", id, model);
         carService.delete(id);
-        return "redirect:/cars";
+        return "redirect:/cars/all";
     }
 
     /**
@@ -104,7 +117,7 @@ public class CarController {
             return "car";
         } else {
             this.carService.update(car);
-            return "redirect:/cars";
+            return "redirect:/cars/all";
         }
     }
 
@@ -125,7 +138,7 @@ public class CarController {
             return "car";
         } else {
             this.carService.add(car);
-            return "redirect:/cars";
+            return "redirect:/cars/all";
         }
     }
 }

@@ -38,13 +38,7 @@
             <ul class="navbar-nav">
                 <a class="nav-item nav-link active"
                    href="cars.html"
-                   th:href="@{/cars}">Cars</a>
-                <a class="nav-item nav-link"
-                   href="drivers.html"
-                   th:href="@{/drivers}">Drivers</a>
-                <a class="nav-item nav-link active"
-                   href="requests.html"
-                   th:href="@{/requests}">Requests</a>
+                   th:href="@{/cars/all}">Cars</a>
                 <a class="nav-item nav-link"
                    href="trips.html"
                    th:href="@{/trips}">Trips</a>
@@ -91,6 +85,12 @@
                             Driver
                         </div>
                         <div class="cell">
+                            Total distance
+                        </div>
+                        <div class="cell">
+                            Number of trips
+                        </div>
+                        <div class="cell">
 
                         </div>
                         <div class="cell">
@@ -106,7 +106,8 @@
                         <div th:text="${car.carNumber}" class="cell" data-title="Number">
                             55-33 AA-1
                         </div>
-                        <div th:text="${car.loadCapacity}" class="cell" data-title="Load Capacity">
+                        <div th:text="${car.loadCapacity}" class="cell" data-title="Load Capacity"
+                             align="center">
                             10
                         </div>
                         <div th:text="${car.carCharacteristics}" class="cell" data-title="Сharacteristics">
@@ -114,6 +115,14 @@
                         </div>
                         <div th:text="${car.carDriver}" class="cell" data-title="Driver">
                             Иванов И.И.
+                        </div>
+                        <div th:text="${car.totalDistance}" class="cell" data-title="Total Distance"
+                             align="center">
+                            2000
+                        </div>
+                        <div th:text="${car.numberOfTrips}" class="cell" data-title="Number of Trips"
+                             align="center">
+                            3
                         </div>
 
                         <div class="cell" data-title="">

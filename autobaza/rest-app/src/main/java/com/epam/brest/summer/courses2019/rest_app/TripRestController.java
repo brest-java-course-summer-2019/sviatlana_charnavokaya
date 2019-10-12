@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.rest_app;
 
 import com.epam.brest.summer.courses2019.model.Trip;
+import com.epam.brest.summer.courses2019.model.TripStatus;
 import com.epam.brest.summer.courses2019.service.TripService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,6 +52,12 @@ public class TripRestController {
         LOGGER.debug("add trip({})", trip);
         Trip result = service.add(trip);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/tripsStatuses")
+    public Collection<TripStatus> findAllTripStatuses() {
+        LOGGER.debug("get all trip statuses");
+        return service.findAllTripStatuses();
     }
 
 }

@@ -2,6 +2,7 @@ package com.epam.brest.summer.courses2019.dao;
 
 
 import com.epam.brest.summer.courses2019.model.Car;
+import com.epam.brest.summer.courses2019.model.stub.CarStub;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,19 @@ public class CarDaoJdbcImplTest {
     @Autowired
     CarDao carDao;
 
+    @Autowired
+    CarStubDao carStubDao;
+
     @Test
     public void findAll() {
         List<Car> cars = carDao.findAll();
+        assertNotNull(cars);
+        assertTrue(cars.size() > 0);
+    }
+
+    @Test
+    public void findAllWithDistanceAndTrips() {
+        List<CarStub> cars = carStubDao.findAllWithDistanceAndTrips();
         assertNotNull(cars);
         assertTrue(cars.size() > 0);
     }

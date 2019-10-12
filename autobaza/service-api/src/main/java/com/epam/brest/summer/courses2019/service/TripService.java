@@ -2,6 +2,7 @@ package com.epam.brest.summer.courses2019.service;
 
 
 import com.epam.brest.summer.courses2019.model.Trip;
+import com.epam.brest.summer.courses2019.model.TripStatus;
 
 import java.util.List;
 
@@ -46,5 +47,20 @@ public interface TripService {
      * @return Trip
      */
     Trip findById(Integer tripId);
+
+    /**
+     * Find all trip statuses stream.
+     *
+     * @return trip status list.
+     */
+    List<TripStatus> findAllTripStatuses();
+
+    /**
+     * Find TripStatus By Id.
+     *
+     * @param tripStatusId id
+     * @return TripStatus
+     */
+    TripStatus findTripStatusById(Integer tripStatusId);
 
 }

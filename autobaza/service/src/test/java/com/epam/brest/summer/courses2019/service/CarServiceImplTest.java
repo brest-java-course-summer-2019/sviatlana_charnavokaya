@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.service;
 
 import com.epam.brest.summer.courses2019.model.Car;
+import com.epam.brest.summer.courses2019.model.stub.CarStub;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,14 @@ public class CarServiceImplTest {
         assertNotNull(cars);
         assertFalse(cars.isEmpty());
     }
+
+    @Test
+    public void findAllWithDistanceAndTrips() {
+        List<CarStub> cars = carService.findAllWithDistanceAndTrips();
+        assertNotNull(cars);
+        assertTrue(cars.size() > 0);
+    }
+
 
     @Test
     void findById() {
