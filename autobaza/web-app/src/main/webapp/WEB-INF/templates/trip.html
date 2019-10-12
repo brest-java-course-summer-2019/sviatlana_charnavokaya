@@ -33,7 +33,7 @@
             <ul class="navbar-nav">
                 <a class="nav-item nav-link active"
                    href="cars.html"
-                   th:href="@{/cars}">Cars</a>
+                   th:href="@{/cars/all}">Cars</a>
                 <a class="nav-item nav-link"
                    href="trips.html"
                    th:href="@{/trips}">Trips</a>
@@ -99,10 +99,17 @@
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_number">Car Number</label>
-                                <input class="form-control"
-                                       id="field_number"
-                                       type="text" value="AA-1 22-33"
-                                       th:field="*{carNumber}"/>
+                                <select class="form-control" th:field="*{carId}">
+                                    <option th:each="car : ${cars}"
+                                            th:value="${car.carId}"
+                                            th:text="${car.carNumber}"
+                                            th:selected="${car.carId} == ${trip.carId}"
+                                            id="field_number">11-22 AA-1
+                                    </option>
+                                    <option th:remove="all">Заявка</option>
+                                    <option th:remove="all">В пути</option>
+                                    <option th:remove="all">Закрыт</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label"
@@ -112,15 +119,23 @@
                                        id="field_distance"
                                        type="text" value="100"
                                        th:field="*{distance}"/>
+                                <div th:if="${#fields.hasErrors('distance')}"
+                                     class="invalid-feedback"
+                                     th:errors="*{distance}">[errors]</div>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label"
                                        for="field_status">Trip status</label>
-                                <select class="form-control"
-                                        id="field_status">
-                                    <option>Заявка</option>
-                                    <option>В пути</option>
-                                    <option>Закрыт</option>
+                                <select class="form-control" th:field="*{tripStatusId}">
+                                    <option th:each="tripStatus : ${tripStatuses}"
+                                            th:value="${tripStatus.tripStatusId}"
+                                            th:text="${tripStatus.tripStatusName}"
+                                            th:selected="${tripStatus.tripStatusId} == ${trip.tripStatusId}"
+                                            id="field_status">Принят
+                                    </option>
+                                    <option th:remove="all">Заявка</option>
+                                    <option th:remove="all">В пути</option>
+                                    <option th:remove="all">Закрыт</option>
                                 </select>
                             </div>
                         </form>

@@ -94,7 +94,7 @@ public class CarRestControllerTest {
         Mockito.when(carService.findAllWithDistanceAndTrips()).thenReturn(Arrays.asList(createCarStub(CAR_ID_0), createCarStub(CAR_ID_1)));
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/cars/with_distance_and_trips/")
+                MockMvcRequestBuilders.get("/cars/all/")
                         .accept(MediaType.APPLICATION_JSON_UTF8)
         ).andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))

@@ -61,6 +61,8 @@ public class TripController {
         Trip trip = new Trip();
         model.addAttribute("trip", trip);
         model.addAttribute("isNew", true);
+        model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
+        model.addAttribute("cars", carService.findAll());
 
         return "trip";
     }
@@ -77,6 +79,8 @@ public class TripController {
         LOGGER.debug("gotoEditTripPage({},{})", id, model);
         Trip trip = tripService.findById(id);
         model.addAttribute("trip", trip);
+        model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
+        model.addAttribute("cars", carService.findAll());
 
         return "trip";
     }
@@ -100,11 +104,13 @@ public class TripController {
      */
     @PostMapping(value = "/trip/{id}")
     public String updateTrip(@Valid Trip trip,
-                            BindingResult result) {
+                            BindingResult result, Model model) {
 
         LOGGER.debug("updateTrip({}, {})", trip, result);
         tripValidator.validate(trip, result);
         if (result.hasErrors()) {
+            model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
+            model.addAttribute("cars", carService.findAll());
             return "trip";
         } else {
             this.tripService.update(trip);
@@ -121,11 +127,13 @@ public class TripController {
      */
     @PostMapping(value = "/trip")
     public String addTrip(@Valid Trip trip,
-                         BindingResult result) {
+                         BindingResult result, Model model) {
 
         LOGGER.debug("addTrip({}, {})", trip, result);
         tripValidator.validate(trip, result);
         if (result.hasErrors()) {
+            model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
+            model.addAttribute("cars", carService.findAll());
             return "trip";
         } else {
             this.tripService.add(trip);

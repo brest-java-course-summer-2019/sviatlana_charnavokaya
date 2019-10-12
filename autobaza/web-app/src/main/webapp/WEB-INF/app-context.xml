@@ -47,6 +47,7 @@
         </property>
     </bean>
 
+
     <!-- Thymeleaf Template Resolver -->
     <bean id="templateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
@@ -64,6 +65,11 @@
         <property name="templateResolvers">
             <set>
                 <ref bean="templateResolver" />
+            </set>
+        </property>
+        <property name="additionalDialects">
+            <set>
+                <bean class="org.thymeleaf.extras.java8time.dialect.Java8TimeDialect"/>
             </set>
         </property>
     </bean>

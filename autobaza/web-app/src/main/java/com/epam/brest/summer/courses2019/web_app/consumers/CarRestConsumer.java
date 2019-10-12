@@ -33,7 +33,7 @@ public class CarRestConsumer implements CarService{
     @Override
     public List<CarStub> findAllWithDistanceAndTrips() {
         LOGGER.debug("findAllWithDistanceAndTrips()");
-        ResponseEntity responseEntity = restTemplate.getForEntity(url + "/with_distance_and_trips", List.class);
+        ResponseEntity responseEntity = restTemplate.getForEntity(url + "/all/", List.class);
         return (List<CarStub>) responseEntity.getBody();
     }
 

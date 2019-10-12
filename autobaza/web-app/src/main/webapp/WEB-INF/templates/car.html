@@ -34,7 +34,7 @@
             <ul class="navbar-nav">
                 <a class="nav-item nav-link active"
                    href="cars.html"
-                   th:href="@{/cars}">Cars</a>
+                   th:href="@{/cars/all}">Cars</a>
                 <a class="nav-item nav-link"
                    href="trips.html"
                    th:href="@{/trips}">Trips</a>
@@ -47,7 +47,7 @@
         <ul class="navbar-nav float-right">
             <li class="nav-item">
                 <a href="cars.html"
-                   th:href="@{/cars}"
+                   th:href="@{/cars/all}"
                    class="btn btn-secondary"
                    title="Back"
                    data-toggle="tooltip"
@@ -55,7 +55,7 @@
             </li>
             <li class="nav-item">
                 <a href="cars.html"
-                   th:href="@{/cars}"
+                   th:href="@{/cars/all}"
                    th:onclick="@{document.forms['carForm'].submit(); return false;}"
                    class="btn btn-primary"
                    title="Save car"

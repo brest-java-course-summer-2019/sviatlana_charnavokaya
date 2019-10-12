@@ -16,6 +16,6 @@ public class HomeController {
      */
     @GetMapping(value = "/")
     public String defaultPageRedirect() {
-        return "redirect:cars";
+        return "redirect:cars/all";
     }
 }

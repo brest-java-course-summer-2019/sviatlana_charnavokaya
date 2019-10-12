@@ -26,7 +26,7 @@ public class CarRestController {
         return service.findAll();
     }
 
-    @GetMapping(value = "/cars/with_distance_and_trips")
+    @GetMapping(value = "/cars/all")
     public Collection<CarStub> findAllStubs() {
         LOGGER.debug("get all cars stubs");
         return service.findAllWithDistanceAndTrips();

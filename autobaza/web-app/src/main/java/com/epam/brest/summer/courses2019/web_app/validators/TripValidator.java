@@ -21,14 +21,14 @@ public class TripValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
 
-        ValidationUtils.rejectIfEmpty(errors, "distance", "tripDistance.empty");
+        ValidationUtils.rejectIfEmpty(errors, "distance", "distance.empty");
         Trip trip = (Trip) target;
 
         if (trip.getDistance() > TRIP_DISTANCE_MAX_SIZE) {
-            errors.rejectValue("tripDistance", "tripDistancel.maxSize10000");
+            errors.rejectValue("distance", "distance.maxSize10000");
         }
         if (trip.getDistance() < 0) {
-            errors.rejectValue("tripDistance", "tripDistancel.negative");
+            errors.rejectValue("distance", "distance.negative");
         }
 
 
