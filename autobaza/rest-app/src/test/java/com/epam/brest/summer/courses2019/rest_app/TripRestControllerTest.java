@@ -5,10 +5,7 @@ import com.epam.brest.summer.courses2019.service.TripService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.util.StdDateFormat;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -57,9 +54,11 @@ public class TripRestControllerTest {
     private TripService tripService;
 
     ObjectMapper objectMapper = new ObjectMapper()
-            .registerModule(new ParameterNamesModule())
-            .registerModule(new Jdk8Module())
-            .registerModule(new JavaTimeModule());
+            //.registerModule(new ParameterNamesModule())
+           // .registerModule(new Jdk8Module());
+            .registerModule(new JavaTimeModule())
+           // .setDateFormat(new StdDateFormat());
+            .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 
     private MockMvc mockMvc;
 
@@ -76,12 +75,8 @@ public class TripRestControllerTest {
         Mockito.reset(tripService);
     }
 
-
     @Test
     public void departments() throws Exception {
-
-       // objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-       // objectMapper.setDateFormat(new StdDateFormat());
 
         Mockito.when(tripService.findAll()).thenReturn(Arrays.asList(createTrip(TRIP_ID_0), createTrip(TRIP_ID_1)));
 
@@ -91,12 +86,12 @@ public class TripRestControllerTest {
         ).andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripId", Matchers.is(TRIP_ID_0)))
-               // .andExpect(MockMvcResultMatchers.jsonPath("$[0].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].carId", Matchers.is(CAR_ID + TRIP_ID_0)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].distance", Matchers.is(DISTANCE + TRIP_ID_0)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_0)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].tripId", Matchers.is(TRIP_ID_1)))
-                //.andExpect(MockMvcResultMatchers.jsonPath("$[0].dateTrip", Matchers.is(DATE_TRIP)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].carId", Matchers.is(CAR_ID + TRIP_ID_1)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].distance", Matchers.is(DISTANCE + TRIP_ID_1)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_1)))
