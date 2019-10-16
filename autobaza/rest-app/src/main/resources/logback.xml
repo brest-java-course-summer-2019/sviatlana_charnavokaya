@@ -8,10 +8,10 @@
         </encoder>
     </appender>
 
-    <logger name="com.epam.courses.hr" level="DEBUG" additivity="false">
+    <logger name="com.epam.brest.summer.courses2019" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
-    <logger name="org.springframework.web" level="DEBUG" additivity="false">
+    <logger name="org.springframework" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
