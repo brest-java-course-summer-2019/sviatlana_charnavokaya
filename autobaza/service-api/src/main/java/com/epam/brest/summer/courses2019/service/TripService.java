@@ -57,14 +57,6 @@ public interface TripService {
     List<TripStatus> findAllTripStatuses();
 
     /**
-     * Find TripStatus By Id.
-     *
-     * @param tripStatusId id
-     * @return TripStatus
-     */
-    TripStatus findTripStatusById(Integer tripStatusId);
-
-    /**
      * Find trips by dates
      *
      * @param startDate  Beginning date .

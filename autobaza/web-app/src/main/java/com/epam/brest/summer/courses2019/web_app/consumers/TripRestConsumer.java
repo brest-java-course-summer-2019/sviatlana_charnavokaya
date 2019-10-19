@@ -68,11 +68,6 @@ public class TripRestConsumer implements TripService {
     }
 
     @Override
-    public TripStatus findTripStatusById(Integer tripStatusId) {
-        return null;
-    }
-
-    @Override
     public List<Trip> findByDates(LocalDate startDate, LocalDate endDate) {
         LOGGER.debug("findByDates: ({} : {})", startDate, endDate);
         ResponseEntity responseEntity = restTemplate.getForEntity(url + "filter", List.class);
