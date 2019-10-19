@@ -20,7 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class TripServiceMockTest {
 
     private static final LocalDate DATE_TRIP = LocalDate.of(2019, 9, 01);
-    private static final LocalDate UPDATE_DATE_TRIP = LocalDate.of(2019, 9, 01);
+    private static final LocalDate START_DATE = LocalDate.of(2019, 8, 01);
+    private static final LocalDate END_DATE = LocalDate.of(2019, 8, 06);
     private static final Integer CAR_ID = 6;
     private static final Integer DISTANCE = 1201;
     private static final Integer TRIP_STATUS_ID = 1;
@@ -108,6 +109,19 @@ public class TripServiceMockTest {
         tripService.delete(id);
 
         Mockito.verify(tripDao).delete(id);
+    }
+
+    @Test
+    public void findTripsByDates() {
+
+        Mockito.when(tripDao.findByDates(START_DATE, END_DATE))
+                .thenReturn(Collections.singletonList(createTrip()));
+
+        List<Trip> trips = tripService.findByDates(START_DATE, END_DATE);
+        assertNotNull(trips);
+        assertEquals(1, trips.size());
+        Mockito.verify(tripDao).findByDates(START_DATE,END_DATE);
+
     }
 
     private Trip createTrip() {

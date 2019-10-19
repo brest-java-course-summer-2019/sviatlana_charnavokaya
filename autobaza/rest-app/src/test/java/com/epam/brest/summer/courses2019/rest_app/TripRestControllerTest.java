@@ -40,7 +40,8 @@ public class TripRestControllerTest {
 
     private static final DateTimeFormatter DATE_FORMATER = DateTimeFormatter.ISO_LOCAL_DATE;
     private static final LocalDate DATE_TRIP = LocalDate.of(2019, 9, 01);
-    private static final LocalDate UPDATE_DATE_TRIP = LocalDate.of(2019, 9, 01);
+    private static final LocalDate START_DATE = LocalDate.of(2019, 9, 01);
+    private static final LocalDate END_DATE = LocalDate.of(2019, 9, 06);
     private static final Integer CAR_ID = 6;
     private static final Integer DISTANCE = 1201;
     private static final Integer TRIP_STATUS_ID = 1;
@@ -82,8 +83,8 @@ public class TripRestControllerTest {
 
         mockMvc.perform(
                 MockMvcRequestBuilders.get("/trips")
-                        .accept(MediaType.APPLICATION_JSON_UTF8)
-        ).andExpect(status().isOk())
+                        .accept(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripId", Matchers.is(TRIP_ID_0)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
@@ -139,6 +140,64 @@ public class TripRestControllerTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .content(json)
         ).andExpect(status().isAccepted());
+    }
+
+   /* @Test
+    public void findTripsByDates() throws Exception {
+        Mockito.when(tripService.findByDates(START_DATE, END_DATE))
+                .thenReturn(Arrays.asList(createTrip(TRIP_ID_0), createTrip(TRIP_ID_1)));
+        System.out.println();
+
+        mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/trips/" + START_DATE.format(DATE_FORMATER) +"/" + END_DATE.format(DATE_FORMATER))
+                        .accept(MediaType.APPLICATION_JSON_UTF8))
+                        .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripId", Matchers.is(TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carId", Matchers.is(CAR_ID + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].distance", Matchers.is(DISTANCE + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].tripId", Matchers.is(TRIP_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carId", Matchers.is(CAR_ID + TRIP_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].distance", Matchers.is(DISTANCE + TRIP_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_1)))
+        ;
+
+        Mockito.verify(tripService).findByDates(START_DATE, END_DATE);
+
+    }*/
+
+    @Test
+    public void filterByDates() throws Exception {
+        Mockito.when(tripService.findByDates(START_DATE, END_DATE))
+                .thenReturn(Arrays.asList(createTrip(TRIP_ID_0), createTrip(TRIP_ID_1)));
+        System.out.println();
+
+        mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/trips/filter")
+                        .param("start", START_DATE.format(DATE_FORMATER))
+                        .param("end", END_DATE.format(DATE_FORMATER))
+                        .accept(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripId", Matchers.is(TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].carId", Matchers.is(CAR_ID + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].distance", Matchers.is(DISTANCE + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].tripId", Matchers.is(TRIP_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].carId", Matchers.is(CAR_ID + TRIP_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].distance", Matchers.is(DISTANCE + TRIP_ID_1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_1)))
+        ;
+
+        Mockito.verify(tripService).findByDates(START_DATE, END_DATE);
+
     }
 
     private Trip createTrip(int index) {

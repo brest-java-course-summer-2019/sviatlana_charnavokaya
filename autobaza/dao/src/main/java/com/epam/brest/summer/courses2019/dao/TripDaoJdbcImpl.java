@@ -1,6 +1,8 @@
 package com.epam.brest.summer.courses2019.dao;
 
 import com.epam.brest.summer.courses2019.model.Trip;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -12,6 +14,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +23,8 @@ import java.util.Optional;
  */
 @Component
 public class TripDaoJdbcImpl implements TripDao{
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TripDaoJdbcImpl.class);
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -38,11 +43,17 @@ public class TripDaoJdbcImpl implements TripDao{
     @Value("${trip.delete}")
     private String deleteSql;
 
+    @Value("${trip.findByDates}")
+    private String findByDatesSql;
+
     private static final String TRIP_ID = "tripId";
     private static final String DATE_TRIP = "dateTrip";
     private static final String CAR_ID = "carId";
     private static final String DISTANCE = "distance";
     private static final String TRIP_STATUS_ID = "tripStatusId";
+    private static final String START_DATE = "startDate";
+    private static final String END_DATE = "endDate";
+
 
     public TripDaoJdbcImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
@@ -96,5 +107,18 @@ public class TripDaoJdbcImpl implements TripDao{
         List<Trip> results = namedParameterJdbcTemplate.query(findByIdSql, namedParameters,
                 BeanPropertyRowMapper.newInstance(Trip.class));
         return Optional.ofNullable(DataAccessUtils.uniqueResult(results));
+    }
+
+    @Override
+    public List<Trip> findByDates(LocalDate startDate, LocalDate endDate) {
+
+        LOGGER.debug("find trips by date: ({} : {})", startDate, endDate);
+        SqlParameterSource namedParameters = new MapSqlParameterSource()
+                .addValue(START_DATE, startDate)
+                .addValue(END_DATE, endDate);
+        List<Trip> trips = namedParameterJdbcTemplate.query(findByDatesSql, namedParameters,
+                BeanPropertyRowMapper.newInstance(Trip.class));
+
+        return trips;
     }
 }

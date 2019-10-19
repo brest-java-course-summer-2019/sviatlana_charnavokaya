@@ -22,6 +22,9 @@ public class TripDaoJdbcImplTest {
 
     private static final LocalDate DATE_TRIP = LocalDate.of(2019, 9, 01);
     private static final LocalDate UPDATE_DATE_TRIP = LocalDate.of(2019, 9, 01);
+    private static final LocalDate START_DATE = LocalDate.of(2019, 8, 02);
+    private static final LocalDate END_DATE = LocalDate.of(2019, 8, 06);
+    private static final int TRIPS_PER_PERIOD = 3;
     private static final Integer CAR_ID = 6;
     private static final Integer DISTANCE = 1201;
     private static final Integer TRIP_STATUS_ID = 1;
@@ -77,6 +80,13 @@ public class TripDaoJdbcImplTest {
         Trip newTrip = tripDao.add(testTrip);
         assertNotNull(newTrip.getCarId());
         assertEquals((sizeBefore + 1), tripDao.findAll().size());
+    }
+
+    @Test
+    public void findTripsByDates() {
+        List<Trip> trips = tripDao.findByDates(START_DATE, END_DATE);
+        assertNotNull(trips);
+        assertEquals(trips.size(), TRIPS_PER_PERIOD);
     }
 
     private Trip createTrip() {

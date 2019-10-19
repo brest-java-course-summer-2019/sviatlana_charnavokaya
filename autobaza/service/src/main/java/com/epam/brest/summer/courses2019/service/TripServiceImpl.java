@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -72,5 +73,11 @@ public class TripServiceImpl implements TripService{
         LOGGER.debug("findTripStatusById({})", tripStatusId);
         return tripStatusDao.findById(tripStatusId)
                 .orElseThrow(() -> new RuntimeException("Failed to get trip from DB"));
+    }
+
+    @Override
+    public List<Trip> findByDates(LocalDate startDate, LocalDate endDate) {
+        LOGGER.debug("find trips by date: ({} : {})", startDate, endDate);
+        return tripDao.findByDates(startDate, endDate);
     }
 }
