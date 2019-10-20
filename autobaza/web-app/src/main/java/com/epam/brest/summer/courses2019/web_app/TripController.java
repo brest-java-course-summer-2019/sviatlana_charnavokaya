@@ -11,10 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 
 /**
  * Trip controller.
@@ -140,4 +142,28 @@ public class TripController {
             return "redirect:/trips";
         }
     }
+
+
+    /**
+     * Go to trips page filtered by dates
+     *
+     * @param startDate  Beginning date .
+     * @param endDate Ending date
+     * @return view name.
+     */
+    @PostMapping(value = "trips/filter")
+    public String findTripsByDates(@ModelAttribute(value = "start") LocalDate startDate,
+                                   @ModelAttribute(value = "end") LocalDate endDate,
+                                   Model model) {
+
+        LOGGER.debug("findTripsByDates: ({} : {})", startDate, endDate);
+
+
+        model.addAttribute("trips", tripService.findByDates(startDate, endDate));
+        model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
+        model.addAttribute("cars", carService.findAll());
+        return "trips";
+    }
+
+
 }

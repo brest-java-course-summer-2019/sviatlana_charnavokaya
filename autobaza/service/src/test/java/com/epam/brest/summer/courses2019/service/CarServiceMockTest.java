@@ -82,6 +82,21 @@ public class CarServiceMockTest {
         Mockito.verify(dao).delete(id);
     }
 
+    @Test
+    public void add() {
+
+        Car car = create();
+
+        Mockito.when(dao.add(car)).thenReturn(car);
+
+        Car expectedCar = service.add(car);
+
+        assertNotNull(expectedCar);
+        assertEquals("77-88 AA-1", expectedCar.getCarNumber());
+
+        Mockito.verify(dao).add(car);
+    }
+
     private Car create() {
         Car car = new Car();
         car.setCarNumber("77-88 AA-1");

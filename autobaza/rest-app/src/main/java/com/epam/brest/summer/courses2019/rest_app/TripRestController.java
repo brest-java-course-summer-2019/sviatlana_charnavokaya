@@ -6,11 +6,14 @@ import com.epam.brest.summer.courses2019.service.TripService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 public class TripRestController {
@@ -60,4 +63,37 @@ public class TripRestController {
         return service.findAllTripStatuses();
     }
 
+    /**
+     * Find trips by dates
+     *
+     * @param startDate  Beginning date .
+     * @param endDate Ending date
+     * @return A list of trips.
+     */
+
+
+
+   /* @GetMapping(value = "/trips/{startDate}/{endDate}")
+    List<Trip> findTripsByDates(@PathVariable("startDate") String startDate,
+                                @PathVariable("endDate") String endDate){
+        LOGGER.debug("find trips by dates ({} {})", startDate, endDate);
+
+        LocalDate localDateStartDate = LocalDate.parse(startDate);
+        LocalDate localDateEndDate = LocalDate.parse(endDate);
+        return service.findByDates(localDateStartDate, localDateEndDate);
+
+    }
+*/
+
+
+    @GetMapping(value = "/trips/filter")
+    List<Trip> findTripsByDates( @RequestParam(value = "start", defaultValue = "2019-01-01")
+                                 @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+                                 @RequestParam(value = "end", defaultValue = "2019-12-31")
+                                 @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
+        LOGGER.debug("find trips by dates ({} {})", startDate, endDate);
+
+
+        return service.findByDates(startDate, endDate);
+    }
 }

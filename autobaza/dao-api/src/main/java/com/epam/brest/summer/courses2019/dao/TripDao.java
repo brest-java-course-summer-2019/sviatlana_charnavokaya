@@ -3,6 +3,7 @@ package com.epam.brest.summer.courses2019.dao;
 
 import com.epam.brest.summer.courses2019.model.Trip;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,4 +49,13 @@ public interface TripDao {
      * @return Trip
      */
     Optional<Trip> findById(Integer tripId);
+
+    /**
+     * Find trips by dates
+     *
+     * @param startDate  Beginning date .
+     * @param endDate Ending date
+     * @return A list of trips.
+     */
+    List<Trip> findByDates(LocalDate startDate, LocalDate endDate);
 }

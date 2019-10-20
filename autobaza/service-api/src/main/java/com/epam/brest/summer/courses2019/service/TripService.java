@@ -4,6 +4,7 @@ package com.epam.brest.summer.courses2019.service;
 import com.epam.brest.summer.courses2019.model.Trip;
 import com.epam.brest.summer.courses2019.model.TripStatus;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -56,11 +57,12 @@ public interface TripService {
     List<TripStatus> findAllTripStatuses();
 
     /**
-     * Find TripStatus By Id.
+     * Find trips by dates
      *
-     * @param tripStatusId id
-     * @return TripStatus
+     * @param startDate  Beginning date .
+     * @param endDate Ending date
+     * @return A list of trips.
      */
-    TripStatus findTripStatusById(Integer tripStatusId);
+    List<Trip> findByDates(LocalDate startDate, LocalDate endDate);
 
 }

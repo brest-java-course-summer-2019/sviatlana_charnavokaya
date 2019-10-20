@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class TripRestConsumer implements TripService {
@@ -67,7 +68,10 @@ public class TripRestConsumer implements TripService {
     }
 
     @Override
-    public TripStatus findTripStatusById(Integer tripStatusId) {
-        return null;
+    public List<Trip> findByDates(LocalDate startDate, LocalDate endDate) {
+        LOGGER.debug("findByDates: ({} : {})", startDate, endDate);
+        ResponseEntity responseEntity = restTemplate.getForEntity(url + "filter", List.class);
+
+        return (List<Trip>) responseEntity.getBody();
     }
 }

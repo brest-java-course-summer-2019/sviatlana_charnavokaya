@@ -45,4 +45,5 @@ public class VersionControllerTest {
         ).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string("\"" + VERSION + "\""));
     }
+
 }

@@ -2,7 +2,6 @@ package com.epam.brest.summer.courses2019.web_app.validators;
 
 import com.epam.brest.summer.courses2019.model.Trip;
 import org.springframework.stereotype.Component;
-//import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -24,10 +23,11 @@ public class TripValidator implements Validator {
         ValidationUtils.rejectIfEmpty(errors, "distance", "distance.empty");
         Trip trip = (Trip) target;
 
-        if (trip.getDistance() > TRIP_DISTANCE_MAX_SIZE) {
+        if (!(trip.getDistance() instanceof Integer)){
+            errors.rejectValue("distance", "distance.typeInteger");
+        }else if (trip.getDistance() > TRIP_DISTANCE_MAX_SIZE) {
             errors.rejectValue("distance", "distance.maxSize10000");
-        }
-        if (trip.getDistance() < 0) {
+        }else if (trip.getDistance() < 0) {
             errors.rejectValue("distance", "distance.negative");
         }
 
