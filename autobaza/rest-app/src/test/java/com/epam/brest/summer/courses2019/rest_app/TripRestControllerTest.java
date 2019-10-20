@@ -170,6 +170,44 @@ public class TripRestControllerTest {
 
     }*/
 
+
+    @Test
+    void deleteTrip() throws Exception {
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.delete("/trips/" + TRIP_ID_1)
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .accept(MediaType.APPLICATION_JSON)
+        ).andExpect(MockMvcResultMatchers.status().isOk())
+        ;
+
+        Mockito.verify(tripService).delete(TRIP_ID_1);
+    }
+
+
+
+    @Test
+    public void findTripById() throws Exception {
+        Trip trip = createTrip(TRIP_ID_0);
+        Mockito.when(tripService.findById(TRIP_ID_0)).thenReturn(trip);
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("/trips/" + TRIP_ID_0)
+                        .accept(MediaType.APPLICATION_JSON_UTF8)
+        ).andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content()
+                        .string(objectMapper.writeValueAsString(trip)))
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(MockMvcResultMatchers.jsonPath("tripId", Matchers.is(TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("dateTrip", Matchers.is(DATE_TRIP.format(DATE_FORMATER))))
+                .andExpect(MockMvcResultMatchers.jsonPath("carId", Matchers.is(CAR_ID + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("distance", Matchers.is(DISTANCE + TRIP_ID_0)))
+                .andExpect(MockMvcResultMatchers.jsonPath("tripStatusId", Matchers.is(TRIP_STATUS_ID + TRIP_ID_0)));
+
+        Mockito.verify(tripService).findById(TRIP_ID_0);
+    }
+
+
     @Test
     public void filterByDates() throws Exception {
         Mockito.when(tripService.findByDates(START_DATE, END_DATE))

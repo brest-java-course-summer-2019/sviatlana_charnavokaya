@@ -1,6 +1,7 @@
 package com.epam.brest.summer.courses2019.service;
 
 import com.epam.brest.summer.courses2019.model.Trip;
+import com.epam.brest.summer.courses2019.model.TripStatus;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TripServiceImplTest {
 
     private static final LocalDate DATE_TRIP = LocalDate.of(2019, 9, 01);
-   // private static final LocalDate UPDATE_DATE_TRIP = LocalDate.of(2019, 9, 01);
     private static final LocalDate START_DATE = LocalDate.of(2019, 8, 01);
     private static final LocalDate END_DATE = LocalDate.of(2019, 8, 06);
     private static final int TRIPS_PER_PERIOD = 4;
@@ -41,6 +41,16 @@ public class TripServiceImplTest {
         assertTrue(trips.size() > 0);
         assertFalse(trips.isEmpty());
     }
+
+    @Test
+    void findAllTripStatuses() {
+        List<TripStatus> tripStatuses = tripService.findAllTripStatuses();
+
+        assertNotNull(tripStatuses);
+        assertTrue(tripStatuses.size() > 0);
+        assertFalse(tripStatuses.isEmpty());
+    }
+
 
     @Test
     void findById() {
