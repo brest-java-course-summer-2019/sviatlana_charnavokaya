@@ -87,9 +87,9 @@ public class TripRestController {
 
 
     @GetMapping(value = "/trips/filter")
-    List<Trip> findTripsByDates( @RequestParam(value = "start", defaultValue = "2019-01-01")
+    List<Trip> findTripsByDates( @RequestParam(value = "startDate")
                                  @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
-                                 @RequestParam(value = "end", defaultValue = "2019-12-31")
+                                 @RequestParam(value = "endDate")
                                  @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
         LOGGER.debug("find trips by dates ({} {})", startDate, endDate);
 

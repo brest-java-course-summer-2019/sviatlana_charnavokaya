@@ -62,11 +62,11 @@
     <nav class="py-1 navbar navbar-expand-sm navbar-dark bg-dark text-light">
         <span class="navbar-brand text-uppercase mr-auto">Filter trips</span>
         <form class="form-inline"
-              id="DatesFilterForm"
-              action="trips/filter"
+              id="datesFilterForm"
+              th:action="@{tripsFilter}"
               th:method="@{post}">
             <div class="form-group">
-                <label for="startDate">Start date</label>
+                <label for="startDate">Start date : </label>
                 <input id="startDate"
                        name="startDate"
                        type="date"
@@ -74,7 +74,7 @@
                        value="">
             </div>
             <div class="form-group">
-                <label for="endDate">End date</label>
+                <label for="endDate">End date : </label>
                 <input id="endDate"
                        name="endDate"
                        type="date"
