@@ -159,10 +159,24 @@ public class TripController {
 
         LOGGER.debug("findTripsByDates: ({} : {})", startDate, endDate);
 
+        if(startDate == null && endDate == null)
+            return "redirect:/trips";
+
+        if(startDate == null){
+            startDate = LocalDate.of(LocalDate.now().getYear(), 1, 1);
+        }
+        if(endDate == null){
+            endDate = LocalDate.now();
+        }
+        if(endDate.isBefore(startDate)){
+            model.addAttribute("dateErrorMessage", "End date should be later than Start date");
+        }
+
 
         model.addAttribute("trips", tripService.findByDates(startDate, endDate));
         model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
         model.addAttribute("cars", carService.findAll());
+
         return "trips";
     }
 
