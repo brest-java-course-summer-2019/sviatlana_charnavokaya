@@ -66,7 +66,6 @@ public class CarRestControllerTest {
         Mockito.reset(carService);
     }
 
-
     @Test
     public void cars() throws Exception {
 

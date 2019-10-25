@@ -2,13 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- Use spring servlet for all requests, including static resources -->
     <mvc:default-servlet-handler/>
@@ -23,30 +26,42 @@
 
     <context:property-placeholder location="classpath:application.properties"/>
 
-<!--    <import resource="classpath*:test-db.xml"/>-->
+    <bean id="carService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.epam.brest.summer.courses2019.service.CarService"/>
+    </bean>
 
-<!--    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">-->
-<!--        <constructor-arg name="dataSource" ref="dataSource"/>-->
-<!--    </bean>-->
-
-    <bean id="carService" class="com.epam.brest.summer.courses2019.web_app.consumers.CarRestConsumer">
-        <constructor-arg index="0" value="${protocol}://${host}:${port}/${point.cars}"/>
-        <constructor-arg index="1" ref="restTemplate"/>
+    <bean id="tripService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.epam.brest.summer.courses2019.service.TripService"/>
     </bean>
 
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
         <property name="messageConverters">
             <list>
-                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                    <property name="objectMapper" ref="jackson2ObjectMapperFactoryBean">
+                    </property>
+                </bean>
             </list>
         </property>
     </bean>
+
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+    <bean id="jackson2ObjectMapperFactoryBean" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+        <property name="featuresToDisable">
+            <array>
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS"/>
+            </array>
+        </property>
+        <property name="modulesToInstall" value="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"/>
+    </bean>
+
 
 
     <!-- Thymeleaf Template Resolver -->
     <bean id="templateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/" />
+        <property name="prefix" value="classpath:templates/" />
         <property name="suffix" value=".html" />
         <property name="templateMode" value="HTML" />
         <!-- Template cache is true by default. Set to false if you want             -->
@@ -62,12 +77,22 @@
                 <ref bean="templateResolver" />
             </set>
         </property>
+        <property name="additionalDialects">
+            <set>
+                <bean class="org.thymeleaf.extras.java8time.dialect.Java8TimeDialect"/>
+            </set>
+        </property>
     </bean>
 
     <!-- Thymeleaf View Resolver - implementation of Spring's ViewResolver interface -->
     <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine" />
         <property name="characterEncoding" value="UTF-8" />
+    </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+          p:basename="/WEB-INF/messages">
     </bean>
 
 </beans>
