@@ -187,6 +187,7 @@ public class CarControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/car/{carId}", CAR_ID_1)
                 .contentType(MediaType.APPLICATION_JSON)
+                .param(CAR_ID, CAR_ID_1.toString())
                 .param(CAR_MODEL, CAR_MODEL + CAR_ID_2)
                 .param(CAR_NUMBER, CAR_NUMBER + CAR_ID_2)
                 .param(CAR_DRIVER, CAR_DRIVER + CAR_ID_2)
@@ -197,7 +198,7 @@ public class CarControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isFound())
                 .andExpect(MockMvcResultMatchers.view().name("redirect:/cars/all"))
                 .andExpect(MockMvcResultMatchers.redirectedUrl("/cars/all"))
-             //   .andExpect(MockMvcResultMatchers.model().attribute("car", hasProperty(CAR_ID, Matchers.is(CAR_ID_1))))
+                .andExpect(MockMvcResultMatchers.model().attribute("car", hasProperty(CAR_ID, Matchers.is(CAR_ID_1))))
                 .andExpect(MockMvcResultMatchers.model().attribute("car", hasProperty(CAR_MODEL, Matchers.is(CAR_MODEL + CAR_ID_2))))
                 .andExpect(MockMvcResultMatchers.model().attribute("car", hasProperty(CAR_NUMBER, Matchers.is(CAR_NUMBER + CAR_ID_2))))
                 .andExpect(MockMvcResultMatchers.model().attribute("car", hasProperty(CAR_CHARACTERISTICS, Matchers.is(CAR_CHARACTERISTICS + CAR_ID_2))))
