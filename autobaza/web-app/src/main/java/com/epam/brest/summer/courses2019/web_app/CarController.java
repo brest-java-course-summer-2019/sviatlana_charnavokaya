@@ -31,20 +31,6 @@ public class CarController {
     CarValidator carValidator;
 
     /**
-     * Goto cars list page.
-     *
-     * @param model model
-     * @return view name
-     */
-    @GetMapping(value = "/cars")
-    public final String cars(Model model) {
-        LOGGER.debug("findAll({})", model);
-        model.addAttribute("cars", carService.findAll());
-
-        return "cars";
-    }
-
-    /**
      * Goto cars list page with distance and trips.
      *
      * @param model model

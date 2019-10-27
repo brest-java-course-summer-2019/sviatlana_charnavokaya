@@ -9,11 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TripRestConsumer implements TripService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TripRestConsumer.class);
+    private static final DateTimeFormatter DATE_FORMATER = DateTimeFormatter.ISO_LOCAL_DATE;
 
     private String url;
 
@@ -63,14 +65,18 @@ public class TripRestConsumer implements TripService {
     @Override
     public List<TripStatus> findAllTripStatuses() {
         LOGGER.debug("findAllTripStatuses()");
-        ResponseEntity responseEntity = restTemplate.getForEntity(url + "Statuses/", List.class);
+        ResponseEntity responseEntity = restTemplate.getForEntity(url + "Statuses", List.class);
         return (List<TripStatus>) responseEntity.getBody();
     }
 
     @Override
     public List<Trip> findByDates(LocalDate startDate, LocalDate endDate) {
         LOGGER.debug("findByDates: ({} : {})", startDate, endDate);
-        ResponseEntity responseEntity = restTemplate.getForEntity(url + "filter", List.class);
+
+        String paramUrl = "?startDate=" + startDate.format(DATE_FORMATER) +
+                "&endDate=" + endDate.format(DATE_FORMATER);
+
+        ResponseEntity responseEntity = restTemplate.getForEntity(url + "/filter" + paramUrl, List.class);
 
         return (List<Trip>) responseEntity.getBody();
     }

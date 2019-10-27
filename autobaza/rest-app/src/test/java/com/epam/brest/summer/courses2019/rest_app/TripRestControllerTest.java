@@ -217,8 +217,8 @@ public class TripRestControllerTest {
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .get("/trips/filter")
-                        .param("start", START_DATE.format(DATE_FORMATER))
-                        .param("end", END_DATE.format(DATE_FORMATER))
+                        .param("startDate", START_DATE.format(DATE_FORMATER))
+                        .param("endDate", END_DATE.format(DATE_FORMATER))
                         .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))

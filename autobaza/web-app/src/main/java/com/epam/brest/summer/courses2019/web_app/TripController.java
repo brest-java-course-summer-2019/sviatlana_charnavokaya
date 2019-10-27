@@ -7,13 +7,11 @@ import com.epam.brest.summer.courses2019.web_app.validators.TripValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
@@ -151,17 +149,34 @@ public class TripController {
      * @param endDate Ending date
      * @return view name.
      */
-    @PostMapping(value = "trips/filter")
-    public String findTripsByDates(@ModelAttribute(value = "start") LocalDate startDate,
-                                   @ModelAttribute(value = "end") LocalDate endDate,
+    @PostMapping(value = "tripsFilter")
+    public String findTripsByDates(
+            @RequestParam(value = "startDate", required = false)
+            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+            @RequestParam(value = "endDate", required = false)
+            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate,
                                    Model model) {
 
         LOGGER.debug("findTripsByDates: ({} : {})", startDate, endDate);
+
+        if(startDate == null && endDate == null)
+            return "redirect:/trips";
+
+        if(startDate == null){
+            startDate = LocalDate.of(LocalDate.now().getYear(), 1, 1);
+        }
+        if(endDate == null){
+            endDate = LocalDate.now();
+        }
+        if(endDate.isBefore(startDate)){
+            model.addAttribute("dateErrorMessage", "End date should be later than Start date");
+        }
 
 
         model.addAttribute("trips", tripService.findByDates(startDate, endDate));
         model.addAttribute("tripStatuses", tripService.findAllTripStatuses());
         model.addAttribute("cars", carService.findAll());
+
         return "trips";
     }
 
