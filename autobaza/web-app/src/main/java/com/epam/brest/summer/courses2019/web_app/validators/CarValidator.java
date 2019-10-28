@@ -36,7 +36,7 @@ public class CarValidator implements Validator {
             errors.rejectValue("carModel", "carModel.maxSize15");
         }
 
-        if (StringUtils.hasLength(car.getCarModel())
+        if (StringUtils.hasLength(car.getCarNumber())
                 && car.getCarNumber().length() > CAR_NUMBER_MAX_SIZE) {
             errors.rejectValue("carNumber", "carNumber.maxSize12");
         }
