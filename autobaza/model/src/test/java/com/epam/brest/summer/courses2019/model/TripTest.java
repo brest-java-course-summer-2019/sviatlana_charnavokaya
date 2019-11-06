@@ -37,6 +37,11 @@ public class TripTest {
         trip.setTripStatusId(TRIP_STATUS_ID);
         Assert.assertTrue(trip.getTripStatusId().equals(TRIP_STATUS_ID));
     }
+    @Test
+    public void getCarId() {
+        trip.setCarId(CAR_ID);
+        Assert.assertTrue(trip.getCarId().equals(CAR_ID));
+    }
 
     @Test
     public void testToString() {
