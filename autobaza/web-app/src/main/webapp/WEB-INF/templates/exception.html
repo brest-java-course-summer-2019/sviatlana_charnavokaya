@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/png"
+          href="../../resources/static/img/icons/favicon.ico"
+          th:href="@{/resources/static/img/icons/favicon.ico}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/fontawesome.css"
+          th:href="@{/resources/static/css/fontawesome.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/bootstrap.css"
+          th:href="@{/resources/static/css/bootstrap.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/style.css"
+          th:href="@{/resources/static/css/style.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/main.css"
+          th:href="@{/resources/static/css/main.css}">
+
+    <title>Error</title>
+</head>
+
+<body>
+
+<header>
+    <nav class="pl-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/" class="navbar-brand"><img src="../../resources/static/img/logo.png"
+                                              th:src="@{/resources/static/img/logo.png}"
+                                              height="64" width="64" alt="Autobaza"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-item nav-link active"
+                   href="cars.html"
+                   th:href="@{/cars/all}">Cars</a>
+                <a class="nav-item nav-link"
+                   href="trips.html"
+                   th:href="@{/trips}">Trips</a>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid pt-2 text-center h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="card">
+            <div class="card-body">
+                <p class="h3 text-danger">Something goes wrong!</p>
+                <h2 class="pl-3" th:text="${Title}"></h2>
+               <!-- <h2 class="pl-3" th:text="${Text}">Unexpected error: Not found</h2>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <hr/>
+    <p class="text-center">&copy; 2019</p>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../../resources/static/js/jquery-3.2.1.min.js"
+        th:src="@{/resources/static/js/jquery-3.2.1.min.js}"></script>
+<script src="../../resources/static/js/popper.min.js"
+        th:src="@{/resources/static/js/popper.min.js}"></script>
+<script src="../../resources/static/js/bootstrap.min.js"
+        th:src="@{/resources/static/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

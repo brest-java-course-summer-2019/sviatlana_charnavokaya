@@ -62,6 +62,7 @@
     <bean id="templateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/templates/" />
+       <!-- <property name="prefix" value="classpath:templates/" />-->
         <property name="suffix" value=".html" />
         <property name="templateMode" value="HTML" />
         <!-- Template cache is true by default. Set to false if you want             -->
