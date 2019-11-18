@@ -49,17 +49,12 @@ public class CarValidator implements Validator {
                 && car.getCarDriver().length() > CAR_DRIVER_MAX_SIZE) {
             errors.rejectValue("carDriver", "carDriver.maxSize18");
         }
-
-        if (!(car.getLoadCapacity() instanceof Integer)){
-            errors.rejectValue("loadCapacity", "loadCapacity.typeInteger");
-        }else if (car.getLoadCapacity() > CAR_LOAD_CAPACITY_MAX_SIZE) {
+        if (car.getLoadCapacity() instanceof Integer && car.getLoadCapacity() > CAR_LOAD_CAPACITY_MAX_SIZE){
             errors.rejectValue("loadCapacity", "loadCapacity.maxSize50000");
-        }else if (car.getLoadCapacity() < 0) {
+        }
+        if (car.getLoadCapacity() instanceof Integer && car.getLoadCapacity() < 0) {
             errors.rejectValue("loadCapacity", "loadCapacity.negative");
         }
-
-
-
 
     }
 }
