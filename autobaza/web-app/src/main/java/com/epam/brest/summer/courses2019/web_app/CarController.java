@@ -120,6 +120,7 @@ public class CarController {
 
         LOGGER.debug("addCar({}, {})", car, result);
         carValidator.validate(car, result);
+
         if (result.hasErrors()) {
             return "car";
         } else {

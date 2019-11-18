@@ -23,11 +23,9 @@ public class TripValidator implements Validator {
         ValidationUtils.rejectIfEmpty(errors, "distance", "distance.empty");
         Trip trip = (Trip) target;
 
-        if (!(trip.getDistance() instanceof Integer)){
-            errors.rejectValue("distance", "distance.typeInteger");
-        }else if (trip.getDistance() > TRIP_DISTANCE_MAX_SIZE) {
+        if (trip.getDistance() instanceof Integer && trip.getDistance() > TRIP_DISTANCE_MAX_SIZE){
             errors.rejectValue("distance", "distance.maxSize10000");
-        }else if (trip.getDistance() < 0) {
+        }else if (trip.getDistance() instanceof Integer && trip.getDistance() < 0) {
             errors.rejectValue("distance", "distance.negative");
         }
 
