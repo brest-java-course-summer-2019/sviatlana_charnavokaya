@@ -51,7 +51,7 @@
     <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
     <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
 
-    <checkstyle.version>8.22</checkstyle.version>
+    <checkstyle.version>8.29</checkstyle.version>
     <jacoco.version>0.8.2</jacoco.version>
     <jacoco.bundle.coveredratio.minimum>0%</jacoco.bundle.coveredratio.minimum>
   </properties>
