@@ -33,7 +33,7 @@
     <java.optimize>true</java.optimize>
     <java.debug>true</java.debug>
 
-    <org.springframework.version>5.1.4.RELEASE</org.springframework.version>
+    <org.springframework.version>5.2.22.RELEASE</org.springframework.version>
     <thymeleaf-spring5.version>3.0.11.RELEASE</thymeleaf-spring5.version>
     <thymeleaf-extras-java8time.version>3.0.4.RELEASE</thymeleaf-extras-java8time.version>
     <junit.version>5.2.0</junit.version>
